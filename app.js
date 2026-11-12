@@ -16,7 +16,7 @@
   // address is assembled at runtime so it never sits in the HTML for scrapers
   const MAIL = ["xzars009", "gmail.com"].join("@");
   let mailShown = false;
-  const commit = c => `<div class="commit"><div class="c-head"><span class="hash">${esc(c.hash)}</span> <b>${esc(c[lang].t)}</b>${c.tag === "now" ? ' <span class="c-tag">HEAD</span>' : ""}</div>
+  const commit = c => `<div class="commit"><div class="c-head">${c.logo ? `<span class="c-logo"><img src="${c.logo}" alt=""></span>` : c.ini ? `<span class="c-logo c-ini">${esc(c.ini)}</span>` : ""}<span class="hash">${esc(c.hash)}</span> <b>${esc(c[lang].t)}</b>${c.tag === "now" ? ' <span class="c-tag">HEAD</span>' : ""}</div>
     <div class="c-meta">${esc(c[lang].when)} <span class="c-kind">(${esc(c.tag)})</span></div><p>${esc(c[lang].d)}</p></div>`;
   const icon = (a, cls = "sq") => `<span class="${cls}" style="background:${a.color};color:${a.ink}"><img src="${a.logo}" alt="" loading="lazy"></span>`;
 
