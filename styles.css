@@ -473,3 +473,5 @@ html[lang=ja] .mob-card h3{font-weight:900}
 .qcard.big{box-shadow:0 0 0 4px var(--rc),10px 10px 0 var(--k)}
 .sl-mob{padding:56px 90px}.sl-mob .h2{font-size:70px;margin-bottom:6px}.sl-mob .sub{font-size:22px;margin-bottom:22px}
 .sl-mob .mob{gap:20px}.sl-mob .mob-card{padding:18px 22px}.sl-mob .mob-card h3{font-size:28px}.sl-mob .mob-card p{font-size:18px}
+.mail{cursor:pointer;font-size:clamp(28px,6vw,72px);word-break:break-all}
+.mail-hint{margin:10px 0 0;opacity:.7}

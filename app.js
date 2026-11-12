@@ -13,10 +13,7 @@
 
   const pdfName = l => `pdf/arsenius-purbandono-portfolio-${l}.pdf`;
   const stamp = s => `<span class="stamp ${s}">${esc(t("status." + s))}</span>`;
-  // The address never appears on the live page. It's only written into the PDF build (?pdf=1).
   const MAIL = ["xzars009", "gmail.com"].join("@");
-  // Web3Forms public access key (safe to ship; it only allows sending to the owner's inbox). Empty = Gmail web fallback.
-  const W3F_KEY = "";
   const commit = c => `<div class="commit"><div class="c-head">${c.logo ? `<span class="c-logo"><img src="${c.logo}" alt=""></span>` : c.ini ? `<span class="c-logo c-ini">${esc(c.ini)}</span>` : ""}<span class="hash">${esc(c.hash)}</span> <b>${esc(c[lang].t)}</b>${c.tag === "now" ? ' <span class="c-tag">HEAD</span>' : ""}</div>
     <div class="c-meta">${esc(c[lang].when)} <span class="c-kind">(${esc(c.tag)})</span></div><p>${esc(c[lang].d)}</p></div>`;
   const icon = (a, cls = "sq") => `<span class="${cls}" style="background:${a.color};color:${a.ink}"><img src="${a.logo}" alt="" loading="lazy"></span>`;
@@ -29,7 +26,7 @@
     ["pdfTop", "pdfHero", "pdfFoot"].forEach(id => { $("#" + id).href = pdfName(lang); });
 
     $("#storyLog").innerHTML = STORY.map(commit).join("");
-    if (params.has("pdf")) document.querySelectorAll(".mail-addr").forEach(el => { el.textContent = MAIL; });
+    document.querySelectorAll(".mail-addr").forEach(el => { el.textContent = MAIL; });
     tick();
 
     $("#icons").innerHTML = APPS.map((a, i) => `
@@ -87,28 +84,10 @@
   }
   setInterval(tick, 15000);
 
-  // ---------- contact form ----------
-  const form = $("#cform"), st = $("#cformSt");
-  form.addEventListener("submit", async e => {
-    e.preventDefault();
-    const d = Object.fromEntries(new FormData(form));
-    if (d.botcheck) return; // honeypot: only bots tick a hidden box
-    if (!W3F_KEY) { // no forwarder key yet: open Gmail in the browser instead of a desktop mail app
-      const q = new URLSearchParams({ view: "cm", fs: "1", to: MAIL, su: `Portfolio: ${d.name}`, body: `${d.message}
-
-${d.name} <${d.email}>` });
-      window.open("https://mail.google.com/mail/?" + q, "_blank", "noopener");
-      return;
-    }
-    const btn = form.querySelector("button"); btn.disabled = true; st.textContent = t("contact.sending");
-    try {
-      const r = await fetch("https://api.web3forms.com/submit", { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ access_key: W3F_KEY, subject: `Portfolio: ${d.name}`, from_name: d.name, name: d.name, email: d.email, message: d.message }) });
-      const j = await r.json();
-      if (!j.success) throw new Error(j.message);
-      st.textContent = t("contact.ok"); form.reset();
-    } catch { st.textContent = t("contact.err"); }
-    btn.disabled = false;
+  // ---------- contact: copy email (desktop mailto handlers are often broken), Gmail web as a fallback ----------
+  $("#gmailLink").href = "https://mail.google.com/mail/?view=cm&fs=1&to=" + MAIL;
+  $("#mailBtn").addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText(MAIL); $("#mailHint").textContent = t("contact.copied"); } catch { location.href = "mailto:" + MAIL; }
   });
 
   // ---------- face "scan": type out an unsure verdict, cycle through variants ----------

@@ -61,7 +61,7 @@
     ]
   };
   const RAR = ["#9AA4AE", "#3E7BFA", "#8A3FFC", "#E2367F", "#F2C200"];
-  const WEIGHT = [40, 28, 18, 10, 4];
+  const WEIGHT = [15, 20, 27, 23, 15]; // generous on purpose: most visitors spin once
   const TILE = 170; // tile width + gap, must match CSS
   const WIN_AT = 34, COUNT = 40;
 
