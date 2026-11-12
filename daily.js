@@ -77,7 +77,9 @@
   const reel = $("#reel"), btn = $("#spinBtn"), card = $("#qcard"), dl = $("#qDl"), mark = $("#caseMark");
   if (!reel) return;
 
-  const pickRarity = () => { let n = Math.random() * 100; for (let i = 0; i < 5; i++) if ((n -= WEIGHT[i]) < 0) return i; return 0; };
+  // the reel shows mostly common/blue so a purple+ hit feels special; the real result uses WEIGHT
+  const SHOW = [55, 30, 10, 4, 1];
+  const pickRarity = (w = WEIGHT) => { let n = Math.random() * 100; for (let i = 0; i < 5; i++) if ((n -= w[i]) < 0) return i; return 0; };
   const plateId = () => "D " + (1000 + Math.floor(Math.random() * 9000)) + " " +
     String.fromCharCode(65 + Math.random() * 26 | 0, 65 + Math.random() * 26 | 0);
   const tile = r => `<div class="tile" style="--rc:${RAR[r]}"><span class="plate plate-sm">${plateId()}</span><i>${t("daily.rar")[r]}</i></div>`;
@@ -95,7 +97,7 @@
   const landSnd = r => [0, 1, 2].forEach(i => setTimeout(() => beep([660, 880, 1320][i] * (1 + r * .06), .25, .08, "triangle"), i * 90));
 
   let spinning = false, won = null;
-  const idle = () => { reel.innerHTML = Array.from({ length: 12 }, () => tile(pickRarity())).join(""); reel.style.transform = "translateX(0)"; };
+  const idle = () => { reel.innerHTML = Array.from({ length: 12 }, () => tile(pickRarity(SHOW))).join(""); reel.style.transform = "translateX(0)"; };
 
   function spin() {
     if (spinning) return;
@@ -104,7 +106,7 @@
 
     const r = pickRarity(), pool = LINES[lang()].filter(l => l.r === r);
     won = pool[Math.random() * pool.length | 0];
-    const rs = Array.from({ length: COUNT }, (_, i) => i === WIN_AT ? r : pickRarity());
+    const rs = Array.from({ length: COUNT }, (_, i) => i === WIN_AT ? r : pickRarity(SHOW));
     reel.innerHTML = rs.map(tile).join("");
 
     const box = reel.parentElement.clientWidth;
