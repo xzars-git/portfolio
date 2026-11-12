@@ -13,9 +13,10 @@
 
   const pdfName = l => `pdf/arsenius-purbandono-portfolio-${l}.pdf`;
   const stamp = s => `<span class="stamp ${s}">${esc(t("status." + s))}</span>`;
-  // address is assembled at runtime so it never sits in the HTML for scrapers
+  // The address never appears on the live page. It's only written into the PDF build (?pdf=1).
   const MAIL = ["xzars009", "gmail.com"].join("@");
-  let mailShown = false;
+  // Web3Forms public access key (safe to ship; it only allows sending to the owner's inbox). Empty = Gmail web fallback.
+  const W3F_KEY = "";
   const commit = c => `<div class="commit"><div class="c-head">${c.logo ? `<span class="c-logo"><img src="${c.logo}" alt=""></span>` : c.ini ? `<span class="c-logo c-ini">${esc(c.ini)}</span>` : ""}<span class="hash">${esc(c.hash)}</span> <b>${esc(c[lang].t)}</b>${c.tag === "now" ? ' <span class="c-tag">HEAD</span>' : ""}</div>
     <div class="c-meta">${esc(c[lang].when)} <span class="c-kind">(${esc(c.tag)})</span></div><p>${esc(c[lang].d)}</p></div>`;
   const icon = (a, cls = "sq") => `<span class="${cls}" style="background:${a.color};color:${a.ink}"><img src="${a.logo}" alt="" loading="lazy"></span>`;
@@ -28,8 +29,7 @@
     ["pdfTop", "pdfHero", "pdfFoot"].forEach(id => { $("#" + id).href = pdfName(lang); });
 
     $("#storyLog").innerHTML = STORY.map(commit).join("");
-    document.querySelectorAll(".mail-addr").forEach(el => { el.textContent = MAIL; });
-    document.querySelectorAll(".mail-btn").forEach(b => { if (mailShown) b.textContent = MAIL; });
+    if (params.has("pdf")) document.querySelectorAll(".mail-addr").forEach(el => { el.textContent = MAIL; });
     tick();
 
     $("#icons").innerHTML = APPS.map((a, i) => `
@@ -87,12 +87,28 @@
   }
   setInterval(tick, 15000);
 
-  // ---------- email: reveal + open the mail app only on click ----------
-  document.addEventListener("click", e => {
-    const b = e.target.closest(".mail-btn"); if (!b) return;
-    mailShown = true;
-    document.querySelectorAll(".mail-btn").forEach(x => { x.textContent = MAIL; });
-    location.href = "mailto:" + MAIL;
+  // ---------- contact form ----------
+  const form = $("#cform"), st = $("#cformSt");
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    const d = Object.fromEntries(new FormData(form));
+    if (d.botcheck) return; // honeypot: only bots tick a hidden box
+    if (!W3F_KEY) { // no forwarder key yet: open Gmail in the browser instead of a desktop mail app
+      const q = new URLSearchParams({ view: "cm", fs: "1", to: MAIL, su: `Portfolio: ${d.name}`, body: `${d.message}
+
+${d.name} <${d.email}>` });
+      window.open("https://mail.google.com/mail/?" + q, "_blank", "noopener");
+      return;
+    }
+    const btn = form.querySelector("button"); btn.disabled = true; st.textContent = t("contact.sending");
+    try {
+      const r = await fetch("https://api.web3forms.com/submit", { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ access_key: W3F_KEY, subject: `Portfolio: ${d.name}`, from_name: d.name, name: d.name, email: d.email, message: d.message }) });
+      const j = await r.json();
+      if (!j.success) throw new Error(j.message);
+      st.textContent = t("contact.ok"); form.reset();
+    } catch { st.textContent = t("contact.err"); }
+    btn.disabled = false;
   });
 
   // ---------- face "scan": type out an unsure verdict, cycle through variants ----------
@@ -130,7 +146,7 @@
         <div class="name"><span class="plate plate-xl">ARSENIUS</span><span class="plate plate-xl plate-y">PURBANDONO</span></div>
         <p class="lead">${esc(t("hero.lead"))}</p><p class="where mono">${esc(t("hero.where"))}</p></div>
       <div class="sl-photo"><img src="me.jpg" alt=""><i><b>${esc(t("phone.box"))}</b></i></div></div>`,
-    mobile: () => `<div class="sl sl-k"><h2 class="h2 h2-y">${esc(t("mob.title"))}</h2><p class="sub">${esc(t("mob.sub"))}</p><div class="mob">
+    mobile: () => `<div class="sl sl-k sl-mob"><h2 class="h2 h2-y">${esc(t("mob.title"))}</h2><p class="sub">${esc(t("mob.sub"))}</p><div class="mob">
       ${[1, 2, 3, 4, 5, 6].map(i => `<div class="mob-card"><i class="mono">${esc(t(`mob.${i}k`))}</i><h3>${esc(t(`mob.${i}t`))}</h3><p>${esc(t(`mob.${i}d`))}</p></div>`).join("")}</div></div>`,
     stats: () => `<div class="sl"><h2 class="h2">${esc(t("stats.title"))}</h2><div class="stats">
       ${[["3+", 1], ["56→76%", 2], ["−30MB", 3], ["4×", 4], ["1.1M", 5], ["494", 6]].map(([n, i]) =>
@@ -153,12 +169,12 @@
     log: part => `<div class="sl sl-tl"><h2 class="h2">${esc(t("about.title"))}</h2><p class="sub mono">${esc(t("about.sub"))}</p>
       <div class="log mono">${part.map(commit).join("")}</div></div>`,
     end: () => `<div class="sl sl-k sl-end"><h2 class="h2 h2-y">${esc(t("sl.thanks"))}</h2><p class="sub">${esc(t("sl.thanks2"))}</p>
-      <button type="button" class="plate plate-xl mail mail-btn">${esc(mailShown ? MAIL : t("contact.mailbtn"))}</button>
+      <span class="plate plate-xl mail">arsenius-portfolio.vercel.app</span>
       <p class="mono sl-links"><a href="https://www.linkedin.com/in/arsenius-purbandono-a05a65212/" target="_blank" rel="noopener">linkedin.com/in/arsenius-purbandono-a05a65212</a> · <a href="https://github.com/xzars-git" target="_blank" rel="noopener">github.com/xzars-git</a></p></div>`
   };
 
   function buildSlides() {
-    slides = [S.title(), S.log(STORY.slice(0, 6)), S.log(STORY.slice(6, 10)), S.log(STORY.slice(10)), S.mobile(), S.stats(), S.pipe(), ...APPS.map(S.app), S.story(), S.models(), S.sandbox(), S.end()];
+    slides = [S.title(), ...APPS.map(S.app), S.log(STORY), S.mobile(), S.stats(), S.pipe(), S.story(), S.models(), S.sandbox(), S.end()];
     stage.innerHTML = slides.map((h, i) => `<section class="slide" data-n="${i}" aria-hidden="true">${h}</section>`).join("");
     $("#deckHint").textContent = t("sl.hint");
     go(Math.min(cur, slides.length - 1));
@@ -166,6 +182,11 @@
   function go(n) {
     cur = Math.max(0, Math.min(slides.length - 1, n));
     stage.querySelectorAll(".slide").forEach((s, i) => { s.classList.toggle("on", i === cur); s.setAttribute("aria-hidden", i !== cur); });
+    // too much text for 1600×900? shrink the whole slide instead of cutting it off
+    const sl = stage.querySelector(".slide.on > .sl");
+    sl.style.cssText = "";
+    const z = Math.min(900 / sl.scrollHeight, 1600 / sl.scrollWidth);
+    if (z < 1) sl.style.cssText = `zoom:${z};width:${1600 / z}px;height:${900 / z}px`;
     $("#deckCount").textContent = `${cur + 1} / ${slides.length}`;
     $("#deckProg").style.width = ((cur + 1) / slides.length * 100) + "%";
     const u = new URL(location); u.searchParams.set("slides", cur + 1); history.replaceState(null, "", u);

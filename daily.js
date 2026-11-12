@@ -3,55 +3,61 @@
   // r = rarity 0..4 (common → legendary)
   const LINES = {
     id: [
-      { r: 4, s: "Langganan doang, limit nggak diabisin. Halo?" },
-      { r: 3, s: "Kode jalan di laptop gue. Ya udah, kirim aja laptopnya ke production." },
-      { r: 2, s: "Commit pertama: \"fix\". Commit kedua: \"fix beneran\"." },
-      { r: 1, s: "Gue nggak nunda kerjaan. Gue async." },
-      { r: 2, s: "Gue nggak lupa nge-test. Gue cuma percaya sama user." },
-      { r: 0, s: "Meeting sejam buat bahas kenapa kerjaan telat sejam." },
-      { r: 0, s: "Sinyal Wi-Fi kantor full. Internetnya? Nggak kenal." },
-      { r: 1, s: "Bayar gym setahun. Yang rajin olahraga cuma notifikasinya." },
-      { r: 3, s: "Akurasi model gue 100%. Datanya tiga foto." },
-      { r: 0, s: "Kata dokter kurangin gula. Kata deadline tambahin kopi." },
-      { r: 1, s: "Gajian tanggal 25. Tanggal 26 udah mode hemat." },
-      { r: 0, s: "Bukan telat bales chat. Gue lagi loading." },
-      { r: 2, s: "Tidur jam 2 bukan begadang. Itu night build." },
-      { r: 3, s: "Plat nomor bisa gue baca. Kode gue sendiri setahun lalu? Belum." },
-      { r: 1, s: "Storage HP penuh. Isinya screenshot \"buat nanti\"." }
+      { r: 4, a: "Langganan AI udah bayar mahal.", b: "Limitnya nggak pernah abis. Halo?" },
+      { r: 4, a: "Kerjaan gue bikin AI yang bisa baca plat nomor.", b: "Plat motor gue sendiri lupa." },
+      { r: 3, a: "Di laptop gue jalan kok.", b: "Ya udah, laptopnya aja yang kita deploy." },
+      { r: 3, a: "Akurasi model gue 100%.", b: "Datanya tiga foto." },
+      { r: 3, a: "Bug-nya udah gue fix.", b: "Sekarang jadi dua, tapi lebih rapi." },
+      { r: 2, a: "Commit pertama: \"fix\".", b: "Commit kedua: \"fix beneran\"." },
+      { r: 2, a: "Kami nggak skip testing.", b: "User yang nge-test. Gratis pula." },
+      { r: 2, a: "Siapa sih yang nulis kode jelek ini?", b: "git blame: gue, setahun lalu." },
+      { r: 1, a: "Gue nggak nunda kerjaan.", b: "Gue async." },
+      { r: 1, a: "Bayar gym setahun.", b: "Yang rajin olahraga cuma notifikasinya." },
+      { r: 1, a: "Gajian tanggal 25.", b: "Tanggal 27 udah nanya \"kapan gajian?\"" },
+      { r: 1, a: "Storage HP penuh. Isinya screenshot \"buat nanti\".", b: "Nantinya nggak pernah dateng." },
+      { r: 0, a: "Rapat sejam buat bahas kenapa kerjaan telat.", b: "Sekarang telatnya nambah sejam." },
+      { r: 0, a: "Wi-Fi kantor sinyalnya full.", b: "Internetnya? Belum kenalan." },
+      { r: 0, a: "\"Lima menit lagi kelar.\"", b: "— gue, tiga jam yang lalu." },
+      { r: 0, a: "Bukan telat bales chat.", b: "Gue masih loading." },
+      { r: 0, a: "Niat tidur jam 10.", b: "Jam 2 masih nonton \"cara cepat tidur\"." }
     ],
     en: [
-      { r: 4, s: "Paying for the subscription, not using the limit. Hello?" },
-      { r: 3, s: "Works on my laptop. Fine, we'll ship the laptop." },
-      { r: 2, s: "Commit one: \"fix\". Commit two: \"actual fix\"." },
-      { r: 1, s: "I'm not procrastinating. I'm async." },
-      { r: 2, s: "I didn't skip testing. I trust our users." },
-      { r: 0, s: "An hour-long meeting about why the work is an hour late." },
-      { r: 0, s: "Office Wi-Fi: full bars, zero internet." },
-      { r: 1, s: "Paid for a year of gym. Only the notifications work out." },
-      { r: 3, s: "My model is 100% accurate. On three photos." },
-      { r: 0, s: "Doctor says less sugar. Deadline says more coffee." },
-      { r: 1, s: "Payday on the 25th. Budget mode on the 26th." },
-      { r: 0, s: "I'm not ignoring your message. I'm still loading." },
-      { r: 2, s: "It's not staying up late. It's a night build." },
-      { r: 3, s: "I can read license plates. My own code from last year? Not yet." },
-      { r: 1, s: "Phone storage full. All screenshots \"for later\"." }
+      { r: 4, a: "Paying for the premium AI plan.", b: "Never once hit the limit. Hello?" },
+      { r: 4, a: "I build AI that reads license plates.", b: "Still can't remember my own." },
+      { r: 3, a: "Works on my laptop.", b: "Fine. We ship the laptop." },
+      { r: 3, a: "My model is 100% accurate.", b: "On three photos." },
+      { r: 3, a: "Fixed the bug.", b: "Now there are two, but they're organized." },
+      { r: 2, a: "Commit one: \"fix\".", b: "Commit two: \"actual fix\"." },
+      { r: 2, a: "We never skip testing.", b: "Our users do it for free." },
+      { r: 2, a: "Who wrote this terrible code?", b: "git blame: me, last year." },
+      { r: 1, a: "I'm not procrastinating.", b: "I'm async." },
+      { r: 1, a: "Paid for a year of gym.", b: "Only the notifications work out." },
+      { r: 1, a: "Payday on the 25th.", b: "By the 27th: \"when's payday?\"" },
+      { r: 1, a: "Phone storage full of screenshots \"for later\".", b: "Later never came." },
+      { r: 0, a: "An hour-long meeting about why we're late.", b: "Now we're an hour later." },
+      { r: 0, a: "Office Wi-Fi: full bars.", b: "Internet: never met it." },
+      { r: 0, a: "\"Five more minutes.\"", b: "— me, three hours ago." },
+      { r: 0, a: "Not ignoring your text.", b: "Still loading." },
+      { r: 0, a: "Planned to sleep at 10.", b: "2 a.m.: watching \"how to fall asleep fast\"." }
     ],
     ja: [
-      { r: 4, s: "サブスクは払ってる。上限までは使ってない。もしもし？" },
-      { r: 3, s: "僕のPCでは動きます。じゃあPCごと本番に送ります。" },
-      { r: 2, s: "1回目のコミット「修正」。2回目「本当に修正」。" },
-      { r: 1, s: "先延ばしじゃない。非同期処理です。" },
-      { r: 2, s: "テストを忘れたんじゃない。ユーザーを信じてるだけ。" },
-      { r: 0, s: "1時間遅れた理由を話す、1時間の会議。" },
-      { r: 0, s: "会社のWi-Fi、アンテナは満タン、ネットはゼロ。" },
-      { r: 1, s: "ジムを1年分払った。運動してるのは通知だけ。" },
-      { r: 3, s: "精度100%のモデルです。データは写真3枚。" },
-      { r: 0, s: "医者は「砂糖を減らせ」、締め切りは「コーヒーを増やせ」。" },
-      { r: 1, s: "給料日は25日。26日から節約モード。" },
-      { r: 0, s: "既読スルーじゃない。まだ読み込み中。" },
-      { r: 2, s: "夜更かしじゃない。ナイトビルドです。" },
-      { r: 3, s: "ナンバープレートは読める。1年前の自分のコードはまだ読めない。" },
-      { r: 1, s: "スマホの容量がいっぱい。中身は「あとで見る」スクショ。" }
+      { r: 4, a: "AIのサブスクは高いプラン。", b: "上限まで使ったことは一度もない。もしもし？" },
+      { r: 4, a: "ナンバープレートを読むAIを作っています。", b: "自分のバイクのナンバーは覚えていません。" },
+      { r: 3, a: "僕のPCでは動きます。", b: "じゃあPCごと本番に出しましょう。" },
+      { r: 3, a: "精度100%のモデルです。", b: "データは写真3枚です。" },
+      { r: 3, a: "バグを直しました。", b: "2つに増えたけど、きれいに並んでいます。" },
+      { r: 2, a: "1回目のコミット「修正」。", b: "2回目「本当に修正」。" },
+      { r: 2, a: "テストは省略していません。", b: "ユーザーが無料でやってくれます。" },
+      { r: 2, a: "このひどいコード、誰が書いた？", b: "git blame：1年前の自分。" },
+      { r: 1, a: "先延ばしじゃない。", b: "非同期処理です。" },
+      { r: 1, a: "ジムを1年分払った。", b: "運動してるのは通知だけ。" },
+      { r: 1, a: "給料日は25日。", b: "27日にはもう「次の給料日いつ？」" },
+      { r: 1, a: "スマホの容量は「あとで見る」スクショでいっぱい。", b: "「あとで」は来なかった。" },
+      { r: 0, a: "遅れの理由を話す1時間の会議。", b: "おかげでさらに1時間遅れた。" },
+      { r: 0, a: "会社のWi-Fi、アンテナは満タン。", b: "ネットとはまだ会ったことがない。" },
+      { r: 0, a: "「あと5分で終わります」", b: "— 3時間前の僕。" },
+      { r: 0, a: "既読スルーじゃない。", b: "まだ読み込み中。" },
+      { r: 0, a: "10時に寝るつもりだった。", b: "2時、「すぐ眠れる方法」の動画を見てる。" }
     ]
   };
   const RAR = ["#9AA4AE", "#3E7BFA", "#8A3FFC", "#E2367F", "#F2C200"];
@@ -113,15 +119,18 @@
   }
 
   function done(r) {
-    spinning = false; btn.disabled = false;
+    spinning = false;
     btn.textContent = t("daily.again");
     mark.dataset.label = `${t("daily.found")} 0.${90 + (Math.random() * 9 | 0)}`; mark.classList.add("hit");
     reel.children[WIN_AT].classList.add("win");
-    landSnd(r);
     $("#qRar").textContent = t("daily.rar")[r]; card.style.setProperty("--rc", RAR[r]);
     $("#qDate").textContent = today();
-    $("#qText").textContent = won.s;
-    card.hidden = false; dl.hidden = false;
+    $("#qText").textContent = won.a;
+    const punch = $("#qPunch"); punch.textContent = won.b; punch.classList.remove("in");
+    card.classList.toggle("big", r >= 3);
+    card.hidden = false;
+    // punchline lands a beat after the setup
+    setTimeout(() => { punch.classList.add("in"); landSnd(r); dl.hidden = false; btn.disabled = false; }, 1100);
   }
 
   const today = () => new Date().toLocaleDateString(lang() === "ja" ? "ja-JP" : lang() === "id" ? "id-ID" : "en-GB",
@@ -130,6 +139,7 @@
   // ---------- card → PNG (1080×1350, drawn by hand, no libraries) ----------
   function wrap(ctx, text, maxW) {
     const words = lang() === "ja" ? [...text] : text.split(" "), sep = lang() === "ja" ? "" : " ";
+    if (text.includes("\n")) return text.split("\n").flatMap(p => wrap(ctx, p, maxW));
     const lines = []; let cur = "";
     for (const w of words) {
       const next = cur ? cur + sep + w : w;
@@ -164,7 +174,7 @@
     // the line, inside a detection box
     x.textAlign = "left"; x.textBaseline = "alphabetic";
     let size = 84, lines;
-    do { x.font = `${lang() === "ja" ? 900 : 400} ${size}px ${disp}`; lines = wrap(x, won.s, W - 260); size -= 4; } while (lines.length * size * 1.2 > 640 && size > 40);
+    do { x.font = `${lang() === "ja" ? 900 : 400} ${size}px ${disp}`; lines = wrap(x, won.a + "\n" + won.b, W - 260); size -= 4; } while (lines.length * size * 1.2 > 640 && size > 40);
     const lh = (size + 4) * 1.2, top = 420 + (640 - lines.length * lh) / 2;
     lines.forEach((l, i) => x.fillText(l, 130, top + lh * (i + .8)));
     x.strokeStyle = "#B6FF00"; x.lineWidth = 8;

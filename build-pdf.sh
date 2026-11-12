@@ -10,6 +10,6 @@ mkdir -p pdf
 OUT="$(cd pdf && pwd -W 2>/dev/null || pwd)"
 for l in en id ja; do
   "$CHROME" --headless=new --disable-gpu --no-pdf-header-footer --virtual-time-budget=8000 \
-    --print-to-pdf="$OUT/arsenius-purbandono-portfolio-$l.pdf" "http://127.0.0.1:$PORT/?lang=$l"
+    --print-to-pdf="$OUT/arsenius-purbandono-portfolio-$l.pdf" "http://127.0.0.1:$PORT/?lang=$l&pdf=1"
 done
 ls -la pdf

@@ -66,6 +66,19 @@
     </div>
   </section>
 
+  <!-- APPS -->
+  <section id="apps" class="block">
+    <h2 class="h2" data-i18n="apps.title"></h2>
+    <p class="sub" data-i18n="apps.sub"></p>
+    <div class="home">
+      <div class="home-bar mono"><span>ARSEN·OS</span><span>▂▄▆█ 5G</span></div>
+      <div class="icons" id="icons"></div>
+      <div class="dock"><span></span><span></span><span></span></div>
+    </div>
+    <!-- print-only expanded list -->
+    <div class="print-apps" id="printApps"></div>
+  </section>
+
   <!-- STORY -->
   <section id="about" class="block">
     <h2 class="h2" data-i18n="about.title"></h2>
@@ -79,8 +92,8 @@
             <li><b>BNSP Senior Mobile Programmer</b> · 2025-11</li>
             <li><b>BNSP Junior Mobile Programmer</b> · 2025-08</li>
             <li><b>EF SET English B2</b> (54/100) · 2024-06</li>
-            <li>MSIB Mobile &amp; Cloud Dev, Nongsa Digital Park · 2022</li>
-            <li>MSIB Game Development, Agate · 2021–22</li>
+            <li><img class="cert-logo" src="logos/org/nongsa.png" alt="">MSIB Mobile &amp; Cloud Dev, Nongsa Digital Park · 2022</li>
+            <li><img class="cert-logo" src="logos/org/agate.png" alt="">MSIB Game Development, Agate · 2021–22</li>
           </ul>
         </div>
         <div class="card card-y">
@@ -133,19 +146,6 @@
     </ol>
   </section>
 
-  <!-- APPS -->
-  <section id="apps" class="block">
-    <h2 class="h2" data-i18n="apps.title"></h2>
-    <p class="sub" data-i18n="apps.sub"></p>
-    <div class="home">
-      <div class="home-bar mono"><span>ARSEN·OS</span><span>▂▄▆█ 5G</span></div>
-      <div class="icons" id="icons"></div>
-      <div class="dock"><span></span><span></span><span></span></div>
-    </div>
-    <!-- print-only expanded list -->
-    <div class="print-apps" id="printApps"></div>
-  </section>
-
   <!-- LAB -->
   <section id="lab" class="block block-y">
     <h2 class="h2" data-i18n="lab.title"></h2>
@@ -183,6 +183,7 @@
     <div class="qcard" id="qcard" hidden>
       <div class="q-top mono"><span id="qRar"></span><span id="qDate"></span></div>
       <p class="q-text" id="qText"></p>
+      <p class="q-text q-punch" id="qPunch"></p>
     </div>
   </section>
 
@@ -190,7 +191,13 @@
   <section id="contact" class="block block-k contact">
     <h2 class="h2 h2-y" data-i18n="contact.title"></h2>
     <p class="sub" data-i18n="contact.sub"></p>
-    <button type="button" class="plate plate-xl mail det mail-btn" data-label="email 1.00" data-i18n="contact.mailbtn"></button>
+    <form class="cform det" id="cform" data-label="message 1.00">
+      <label><span data-i18n="contact.name"></span><input name="name" required maxlength="80" autocomplete="name"></label>
+      <label><span data-i18n="contact.email"></span><input name="email" type="email" required maxlength="120" autocomplete="email"></label>
+      <label class="full"><span data-i18n="contact.msg"></span><textarea name="message" required rows="5" maxlength="3000"></textarea></label>
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="full cform-act"><button class="btn btn-y" type="submit" data-i18n="contact.send"></button><p class="mono cform-st" id="cformSt" aria-live="polite"></p></div>
+    </form>
     <div class="links mono">
       <a href="https://www.linkedin.com/in/arsenius-purbandono-a05a65212/" target="_blank" rel="noopener">LinkedIn ↗</a>
       <a href="https://github.com/xzars-git" target="_blank" rel="noopener">GitHub ↗</a>
@@ -210,14 +217,17 @@
   <div class="appwin-screen" role="dialog" aria-modal="true" aria-labelledby="awTitle">
     <div class="aw-bar" id="awBar"><span class="mono" id="awStatus"></span><button id="awClose" class="mono">✕ <span data-i18n="apps.close"></span></button></div>
     <div class="aw-body">
-      <div class="aw-icon" id="awIcon"></div>
-      <small class="mono aw-ph" id="awPh"></small>
-      <h3 id="awTitle"></h3>
-      <p id="awWhat"></p>
-      <h4 class="mono" data-i18n="apps.role"></h4>
-      <ul id="awRole"></ul>
-      <h4 class="mono" data-i18n="apps.stack"></h4>
-      <div class="chips" id="awStack"></div>
+      <div class="aw-l">
+        <div class="aw-head"><div class="aw-icon" id="awIcon"></div><h3 id="awTitle"></h3></div>
+        <small class="mono aw-ph" id="awPh"></small>
+        <p id="awWhat"></p>
+        <h4 class="mono" data-i18n="apps.stack"></h4>
+        <div class="chips" id="awStack"></div>
+      </div>
+      <div class="aw-r">
+        <h4 class="mono" data-i18n="apps.role"></h4>
+        <ul id="awRole"></ul>
+      </div>
     </div>
     <div class="aw-home"></div>
   </div>
@@ -240,8 +250,8 @@
 <!-- mobile bottom nav -->
 <nav class="bottomnav mono" aria-label="Sections">
   <a href="#home"><i>⌂</i><span data-i18n="nav.home"></span></a>
-  <a href="#about"><i>≡</i><span data-i18n="nav.about"></span></a>
   <a href="#apps"><i>▦</i><span data-i18n="nav.apps"></span></a>
+  <a href="#about"><i>≡</i><span data-i18n="nav.about"></span></a>
   <a href="#lab"><i>◎</i><span data-i18n="nav.lab"></span></a>
   <a href="#contact"><i>✉</i><span data-i18n="nav.contact"></span></a>
 </nav>

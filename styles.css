@@ -408,3 +408,68 @@ html[lang=ja] .mob-card h3{font-weight:900}
 .c-logo img{height:22px;width:auto;display:block}
 .c-ini{background:var(--y);font:800 12px/1 var(--mono);letter-spacing:.04em}
 .sl .c-logo{height:40px;min-width:40px}.sl .c-logo img{height:30px}.sl .c-ini{font-size:15px}
+
+/* ---------- app window v2: fits without scrolling ---------- */
+.appwin-screen{width:min(880px,100%);border-radius:26px}
+.aw-body{display:grid;grid-template-columns:1fr 1.15fr;gap:8px 30px;padding:20px 24px 6px}
+.aw-head{display:flex;align-items:center;gap:14px}
+.aw-head .aw-icon{width:64px;flex:none}
+.aw-body h3{margin:0;font-size:32px}
+.aw-body p{margin:12px 0 0;line-height:1.5}
+.aw-r h4{margin-top:0}
+.aw-body li{font-size:14.5px;line-height:1.45}
+@media (max-width:767px){
+  .appwin{padding:8px}
+  .appwin-screen{max-height:96vh;border-radius:22px}
+  .aw-bar{padding:10px 14px}
+  .aw-body{grid-template-columns:1fr;padding:14px 16px 4px;gap:0}
+  .aw-head .aw-icon{width:48px;box-shadow:3px 3px 0 var(--k)}
+  .aw-body h3{font-size:24px}
+  .aw-body p{font-size:14px;margin-top:8px}
+  .aw-body h4{margin:12px 0 6px}
+  .aw-l{display:flex;flex-direction:column}.aw-l .chips{order:9}.aw-l h4{order:8}
+  .aw-r h4{margin-top:12px}
+  .aw-body li{font-size:13.5px;margin-bottom:4px}
+  .chip{font-size:11px;padding:2px 6px}
+  .aw-home{margin:8px auto 10px}
+}
+
+/* ---------- story timeline v2: compact cards ---------- */
+#about .about{grid-template-columns:1fr;gap:26px}
+#about .log{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+#about .commit{border:3px solid var(--k);background:var(--w);padding:12px 14px;margin:0;box-shadow:4px 4px 0 var(--k)}
+#about .commit::before{display:none}
+#about .commit:nth-child(3n+2){transform:rotate(.6deg)}#about .commit:nth-child(3n){transform:rotate(-.5deg)}
+#about .commit:last-child{background:var(--lime)}
+#about .c-head{font-size:13.5px;line-height:1.35}
+#about .c-head .hash{display:none}
+#about .c-logo{float:right;margin:0 0 6px 8px}
+#about .commit p{font-size:13.5px;line-height:1.45}
+#about .side{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+@media (max-width:767px){
+  #about .log{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding:4px 16px 14px;margin:0 -16px}
+  #about .commit{flex:0 0 78%;scroll-snap-align:start;transform:none}
+  #about .side{grid-template-columns:1fr}
+}
+@media print{#about .log{grid-template-columns:1fr 1fr 1fr;gap:6px}#about .commit{box-shadow:none;transform:none;padding:6px 8px}#about .commit p,#about .c-head{font-size:8pt}}
+
+/* ---------- contact form ---------- */
+.cform{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px;max-width:760px;margin:10px 0 34px;background:var(--paper);color:var(--k);
+  border:4px solid var(--w);padding:20px;transform:rotate(-1deg);box-shadow:8px 8px 0 var(--y)}
+.cform label{display:flex;flex-direction:column;gap:6px;font:700 12px var(--mono);text-transform:uppercase;letter-spacing:.06em}
+.cform .full{grid-column:1/-1}
+.cform input,.cform textarea{font:400 16px var(--body);padding:10px 12px;border:3px solid var(--k);background:var(--w);color:var(--k);border-radius:0}
+.cform input:focus,.cform textarea:focus{outline:3px solid var(--lime);outline-offset:0}
+.cform .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.cform-act{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.cform-st{margin:0;font-size:13px}
+@media (max-width:600px){.cform{grid-template-columns:1fr;transform:none}}
+@media print{.cform{display:none!important}}
+.cert-logo{height:18px;width:auto;vertical-align:middle;margin-right:6px;background:#fff;border:1px solid var(--k);padding:1px 3px}
+#about .side{grid-template-columns:1.2fr 1fr 1fr}
+@media (max-width:900px){#about .side{grid-template-columns:1fr}}
+.q-punch{opacity:0;color:var(--k);background:var(--rc);display:inline-block;padding:2px 10px;margin-top:8px;transform:scale(.6) rotate(-2deg)}
+.q-punch.in{opacity:1;transform:scale(1) rotate(-2deg);transition:transform .25s cubic-bezier(.3,1.8,.5,1),opacity .1s}
+.qcard.big{box-shadow:0 0 0 4px var(--rc),10px 10px 0 var(--k)}
+.sl-mob{padding:56px 90px}.sl-mob .h2{font-size:70px;margin-bottom:6px}.sl-mob .sub{font-size:22px;margin-bottom:22px}
+.sl-mob .mob{gap:20px}.sl-mob .mob-card{padding:18px 22px}.sl-mob .mob-card h3{font-size:28px}.sl-mob .mob-card p{font-size:18px}
