@@ -154,6 +154,24 @@
     <div class="sandbox" id="sandbox"></div>
   </section>
 
+  <!-- LINE OF THE DAY -->
+  <section id="daily" class="block block-k daily">
+    <h2 class="h2 h2-y" data-i18n="daily.title"></h2>
+    <p class="sub" data-i18n="daily.sub"></p>
+    <div class="case">
+      <div class="case-win"><div class="reel" id="reel"></div></div>
+      <i class="case-mark" id="caseMark" data-label=""></i>
+    </div>
+    <div class="daily-act">
+      <button type="button" class="btn btn-y" id="spinBtn" data-i18n="daily.spin"></button>
+      <button type="button" class="btn" id="qDl" data-i18n="daily.dl" hidden></button>
+    </div>
+    <div class="qcard" id="qcard" hidden>
+      <div class="q-top mono"><span id="qRar"></span><span id="qDate"></span></div>
+      <p class="q-text" id="qText"></p>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section id="contact" class="block block-k contact">
     <h2 class="h2 h2-y" data-i18n="contact.title"></h2>
@@ -216,5 +234,6 @@
 
 <script src="i18n.js"></script>
 <script src="app.js"></script>
+<script src="daily.js"></script>
 </body>
 </html>
