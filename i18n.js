@@ -256,6 +256,7 @@ window.APPS = [
     ja: { what: "ショベルカーやクレーンなど重機の税のアプリ。記録と照会に使います。",
       role: ["共通のFlutter構成で機能開発と保守"] }
   },
+  /* hidden until it ships (still a prototype)
   {
     id: "linmas", name: "Aing Linmas", abbr: "AL", color: "#7C3AED", ink: "#fff", status: "proto", logo: "logos/al.svg", ph: true,
     stack: ["Flutter", "Android + iOS", "QR", "PDF"],
@@ -266,6 +267,7 @@ window.APPS = [
     ja: { what: "Linmas（地域防災隊）隊員の登録システムのスマホ版。州から村まで対応します。",
       role: ["身分証番号の確認と自動下書き付きの3ステップ登録", "QR付きのデジタル隊員証（画像・PDFで保存）", "管理者側：地域別の集計ダッシュボード、理由付きの承認・却下、隊員証のQRスキャンで真偽確認", "今は仮データで動作、バックエンドは未接続"] }
   }
+  */
 ];
 
 window.MODELS = [
