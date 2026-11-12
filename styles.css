@@ -317,6 +317,7 @@ body:has(.appwin:not([hidden])),body:has(.deck:not([hidden])){overflow:hidden}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
   .sheet-ok{opacity:1}
+  .vf-scan{display:none}
 }
 
 /* ---------- print / PDF ---------- */
