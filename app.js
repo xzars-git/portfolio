@@ -132,7 +132,7 @@
         <p class="avail">${esc(t("about.avail"))}</p></div></div></div>`,
     end: () => `<div class="sl sl-k sl-end"><h2 class="h2 h2-y">${esc(t("sl.thanks"))}</h2><p class="sub">${esc(t("sl.thanks2"))}</p>
       <span class="plate plate-xl mail">xzars009@gmail.com</span>
-      <p class="mono sl-links">linkedin.com/in/arsenius-purbandono-a05a65212 · github.com/xzars-git · arsenius-portfolio.vercel.app</p></div>`
+      <p class="mono sl-links"><a href="https://www.linkedin.com/in/arsenius-purbandono-a05a65212/" target="_blank" rel="noopener">linkedin.com/in/arsenius-purbandono-a05a65212</a> · <a href="https://github.com/xzars-git" target="_blank" rel="noopener">github.com/xzars-git</a></p></div>`
   };
 
   function buildSlides() {
