@@ -40,7 +40,7 @@ window.I18N = {
     "about.title": "HOW I GOT HERE", "about.sub": "git log --reverse arsenius. Oldest first.", "contact.mailbtn": "Send me an email", "clock.city": "Bandung",
     "about.cert": "Certificates", "about.lang": "Languages",
     "about.en": "English: B2 (EF SET 54/100)",
-    "about.ja": "Japanese: beginner. Working through Minna no Nihongo, aiming for JLPT N4",
+    "about.ja": "Japanese: beginner. Working through Minna no Nihongo, aiming for JLPT N3",
     "about.id": "Indonesian: native",
     "about.avail": "I want to work as a software or AI engineer in Japan. I can start in the second half of 2027 and will need visa sponsorship.",
     "contact.title": "CONTACT",
@@ -93,7 +93,7 @@ window.I18N = {
     "about.title": "PERJALANAN GUE", "about.sub": "git log --reverse arsenius. Dari yang paling lama.", "contact.mailbtn": "Kirim email ke gue", "clock.city": "Bandung",
     "about.cert": "Sertifikat", "about.lang": "Bahasa",
     "about.en": "Inggris: B2 (EF SET 54/100)",
-    "about.ja": "Jepang: masih pemula, lagi ngulik Minna no Nihongo, target JLPT N4",
+    "about.ja": "Jepang: masih pemula, lagi ngulik Minna no Nihongo, target JLPT N3",
     "about.id": "Indonesia: bahasa ibu",
     "about.avail": "Gue lagi nyari kerja software atau AI engineer di Jepang. Bisa mulai paruh kedua 2027, butuh sponsor visa.",
     "contact.title": "KONTAK",
@@ -146,7 +146,7 @@ window.I18N = {
     "about.title": "これまでの歩み", "about.sub": "git log --reverse arsenius。古い順に並べています。", "contact.mailbtn": "メールを送る", "clock.city": "バンドン", "clock.jp": "日本",
     "about.cert": "資格", "about.lang": "語学",
     "about.en": "英語：B2（EF SET 54/100）",
-    "about.ja": "日本語：初学者。『みんなの日本語』で勉強中、JLPT N4が目標",
+    "about.ja": "日本語：初学者。『みんなの日本語』で勉強中、JLPT N3が目標",
     "about.id": "インドネシア語：母語",
     "about.avail": "日本でソフトウェア／AIエンジニアとして働きたいと考えています。2027年後半から働けます。就労ビザのサポートが必要です。",
     "contact.title": "連絡先",
@@ -173,7 +173,7 @@ window.APPS = [
       role: ["プレート認識モジュール（Teman Pamor）を開発：検出・色・OCRをすべてスマホ上で", "AndroidカメラプラグインをKotlinで修正し、3〜4回の再起動をなくした", "OTA更新を強化：HTTPSのみ、新しい版のみ、SHA-256で確認", "現場ルール：位置の半径チェック、照会済み車両の警告、所有者情報フォーム、ロールごとの地域でデータを制限", "トークン更新とセッション切れ時の強制ログアウト、日付で絞り込める照会レポート"] }
   },
   {
-    id: "atos", name: "ATOS PAMOR", abbr: "AP", color: "#fff", ink: "#111", status: "prod", logo: "logos/atos.png",
+    id: "atos", name: "ATOS PAMOR", abbr: "AP", color: "#1F5FAE", ink: "#fff", status: "prod", logo: "logos/atos.svg",
     stack: ["Flutter", "MVC", "Dio", "Hive", "flutter_map", "Geolocator", "OTA"],
     en: { what: "The heavier tracing app for the special task force: data checks, vehicle history and the paperwork for collecting overdue tax.",
       role: ["Photo evidence gets a watermark with officer ID, GPS and the street address", "Every controller handles errors the same way now, and users see the real backend message", "Moved the app to a new major Flutter and Dart version", "Gallery photos lost GPS in the watermark (Android 10+ strips it). Shipped a fix that works as a Shorebird patch, and wrote down the full fix for the next APK", "Wrote the API integration and testing/debugging documents for ATOS PAMOR and Panah Pasopati"] },
@@ -183,33 +183,33 @@ window.APPS = [
       role: ["証拠写真に職員ID・GPS・住所の透かしを入れる", "全コントローラーのエラー処理をそろえ、バックエンドの実際のメッセージを表示", "Flutter／Dartの新しいメジャーバージョンへ移行", "ギャラリー写真の透かしから位置情報が消える問題（Android 10以降がGPSを削除）を、Shorebirdパッチで直せる形で修正し、次のAPK向けの完全な対策も文書化", "ATOS PAMORとPanah PasopatiのAPI連携資料とテスト・デバッグ資料を作成"] }
   },
   {
-    id: "sj", name: "SAKTI JAWARA", abbr: "SJ", color: "#E3262E", ink: "#fff", status: "prod", logo: "logos/sj.svg", ph: true,
+    id: "sj", name: "SAKTI JAWARA", abbr: "SJ", color: "#FDE2E3", ink: "#111", status: "prod", logo: "logos/sj.svg",
     stack: ["Flutter", "Device SDK", "Thermal printer", "Excel/PDF"],
-    en: { what: "The counter app at every Samsat office in West Java. Officers take tax payments and change vehicle data here.",
+    en: { what: "The counter app at every Samsat office in West Java. It runs on cashier-style POS terminals, where officers take tax payments and change vehicle data.",
       role: ["Hooked up the device SDKs: camera, thermal printer, second screen", "Excel and PDF export", "Keyboard shortcuts, because counter staff hate reaching for the mouse"] },
-    id: { what: "App loket di tiap kantor Samsat se-Jabar. Petugas terima bayar pajak dan ubah data kendaraan di sini.",
+    id: { what: "App loket di tiap kantor Samsat se-Jabar. Jalannya di perangkat POS kayak mesin kasir minimarket, petugas terima bayar pajak dan ubah data kendaraan di situ.",
       role: ["Nyambungin SDK perangkat: kamera, printer termal, layar kedua", "Export Excel dan PDF", "Shortcut keyboard, soalnya petugas loket males bolak-balik ke mouse"] },
-    ja: { what: "西ジャワ州の各Samsat窓口で使うアプリ。職員が納税の受付や車両データの変更を行います。",
+    ja: { what: "西ジャワ州の各Samsat窓口で使うアプリ。レジのようなPOS端末で動き、職員が納税の受付や車両データの変更を行います。",
       role: ["カメラ、サーマルプリンタ、セカンドスクリーンのSDKを連携", "ExcelとPDFの出力", "窓口の職員がマウスを使わずに済むキーボードショートカット"] }
   },
   {
-    id: "sm", name: "Sakti Mobile", abbr: "SM", color: "#fff", ink: "#111", status: "prod", logo: "logos/sm.svg", ph: true,
+    id: "sm", name: "Sakti Mobile", abbr: "SM", color: "#ECECEC", ink: "#111", status: "prod", logo: "logos/sm.svg",
     stack: ["Flutter", "Camera", "Excel/PDF"],
-    en: { what: "The phone version for verifiers who check payments and data changes.",
+    en: { what: "The same Sakti, on a phone. Verifiers use it to check payments and data changes.",
       role: ["Camera for evidence photos", "Local data storage", "Excel and PDF export"] },
-    id: { what: "Versi HP buat verifikator yang ngecek pembayaran dan perubahan data.",
+    id: { what: "Sakti yang sama, versi HP. Dipake verifikator buat ngecek pembayaran dan perubahan data.",
       role: ["Kamera buat foto bukti", "Simpan data lokal", "Export Excel dan PDF"] },
-    ja: { what: "納税やデータ変更を確認する検証担当者のためのスマホ版。",
+    ja: { what: "同じSaktiのスマホ版。検証担当者が納税やデータ変更を確認します。",
       role: ["証拠写真のためのカメラ", "ローカルデータ保存", "ExcelとPDFの出力"] }
   },
   {
-    id: "sd", name: "Samsat Digital", abbr: "SD", color: "#1F6FEB", ink: "#fff", status: "prod", logo: "logos/sd.svg", ph: true,
+    id: "sd", name: "Samsat Digital", abbr: "SD", color: "#DCE8FD", ink: "#111", status: "prod", logo: "logos/sd.svg",
     stack: ["Flutter", "Kiosk", "Device SDK"],
-    en: { what: "Self-service kiosk at Samsat branches where people pay vehicle tax on their own.",
+    en: { what: "Sakti on a big self-service kiosk at Samsat branches, where people pay vehicle tax on their own.",
       role: ["Connected the kiosk hardware: camera, printer and the rest", "Local data for each kiosk session"] },
-    id: { what: "Kios mandiri di cabang Samsat, warga bisa bayar pajak kendaraan sendiri tanpa antre loket.",
+    id: { what: "Sakti versi kios gede di cabang Samsat, warga bisa bayar pajak kendaraan sendiri tanpa antre loket.",
       role: ["Nyambungin hardware kios: kamera, printer, dan lain-lain", "Data lokal tiap sesi kios"] },
-    ja: { what: "Samsat支所に置かれたセルフサービス端末。市民が自分で車両税を払えます。",
+    ja: { what: "Samsat支所に置かれた大型セルフサービス端末版のSakti。市民が自分で車両税を払えます。",
       role: ["カメラやプリンタなどキオスク機器との連携", "利用ごとのローカルデータ管理"] }
   },
   {
@@ -304,7 +304,7 @@ window.STORY = [
   { hash: "f13b8c6", tag: "ai", en: { when: "Oct – Nov 2026", t: "Color classifier, then custom OCR in production", d: "Panah Pasopati v4.5.0 dropped ML Kit. Exact plate reads went from 56% to 76%." },
     id: { when: "Okt – Nov 2026", t: "Klasifikasi warna, terus OCR sendiri masuk produksi", d: "Panah Pasopati v4.5.0 udah gak pake ML Kit. Plat kebaca persis naik dari 56% ke 76%." },
     ja: { when: "2026年10月〜11月", t: "色分類、続いて自作OCRを本番投入", d: "Panah Pasopati v4.5.0でML Kitを廃止。完全一致の読み取りが56%から76%に。" } },
-  { hash: "HEAD", tag: "now", en: { when: "now", t: "Learning Japanese, heading to Japan", d: "Working through Minna no Nihongo toward JLPT N4. Looking for a software or AI engineer role in Japan from the second half of 2027." },
-    id: { when: "sekarang", t: "Belajar Jepang, otw Jepang", d: "Lagi ngulik Minna no Nihongo, target JLPT N4. Nyari kerja software atau AI engineer di Jepang mulai paruh kedua 2027." },
-    ja: { when: "現在", t: "日本語を勉強中、日本へ", d: "『みんなの日本語』でJLPT N4を目指しています。2027年後半から日本でソフトウェア／AIエンジニアとして働きたいです。" } }
+  { hash: "HEAD", tag: "now", en: { when: "now", t: "Learning Japanese, heading to Japan", d: "Working through Minna no Nihongo toward JLPT N3. Looking for a software or AI engineer role in Japan from the second half of 2027." },
+    id: { when: "sekarang", t: "Belajar Jepang, otw Jepang", d: "Lagi ngulik Minna no Nihongo, target JLPT N3. Nyari kerja software atau AI engineer di Jepang mulai paruh kedua 2027." },
+    ja: { when: "現在", t: "日本語を勉強中、日本へ", d: "『みんなの日本語』でJLPT N3を目指しています。2027年後半から日本でソフトウェア／AIエンジニアとして働きたいです。" } }
 ];
