@@ -88,10 +88,6 @@ img{max-width:100%}
 @keyframes lock{0%,15%{opacity:0;transform:scale(1.5)}30%,92%{opacity:1;transform:scale(1)}100%{opacity:0}}
 @keyframes blink{50%{opacity:0}}
 
-/* ---------- marquee ---------- */
-.marquee{background:var(--y);border-block:var(--b);overflow:hidden;transform:rotate(-1.2deg);margin:0 -10px}
-.marquee-track{display:inline-block;white-space:nowrap;font-weight:700;font-size:18px;padding:12px 0;animation:mq 38s linear infinite}
-@keyframes mq{to{transform:translateX(-50%)}}
 
 /* ---------- blocks ---------- */
 .block{padding:84px 5vw;max-width:1400px;margin:0 auto}
@@ -197,6 +193,9 @@ img{max-width:100%}
 
 /* contact */
 .contact{text-align:left}
+#clock span+span::before{content:" · "}
+.mail-btn{cursor:pointer}
+.c-kind{opacity:.6;font-size:11px}
 .mail{text-transform:none;font-size:clamp(28px,6vw,84px);transform:rotate(-2deg);margin:10px 0 40px;word-break:break-all}
 .links{display:flex;flex-wrap:wrap;gap:16px}
 .links a{color:var(--w);text-decoration:none;border:3px solid var(--w);padding:10px 16px;font-weight:700;cursor:pointer}
@@ -259,6 +258,7 @@ img{max-width:100%}
 .sl .sandbox{gap:40px}.sl .sand{padding:34px}.sl .sand h4{font-size:38px}.sl .sand .metric{font-size:56px}.sl .sand .st{font-size:18px}.sl .sand p{font-size:24px}
 .sl-log{display:grid;grid-template-columns:1.3fr .7fr;gap:60px}
 .sl-log .commit{margin-bottom:36px}.sl-log .c-head{font-size:28px}.sl-log .c-meta{font-size:18px}.sl-log .commit p{font-size:22px}
+.sl-tl .log{columns:2;column-gap:60px}.sl-tl .commit{margin-bottom:30px;break-inside:avoid}.sl-tl .c-head{font-size:22px}.sl-tl .c-meta{font-size:16px}.sl-tl .commit p{font-size:18px}
 .sl-log .card li{font-size:21px}.sl-log h3{font-size:30px}.sl-log .avail{font-size:24px}
 .sl-end{display:flex;flex-direction:column;justify-content:center}
 .sl-end .mail{font-size:110px;margin:20px 0 50px;align-self:flex-start}
@@ -324,7 +324,7 @@ body:has(.appwin:not([hidden])),body:has(.deck:not([hidden])){overflow:hidden}
 @page{size:A4;margin:12mm}
 @media print{
   body{background:#fff;padding:0;font-size:11pt}
-  .statusbar,.bottomnav,.marquee,.phone,.ctas,.home,.appwin,.deck,.links #pdfFoot{display:none!important}
+  .statusbar,.bottomnav,.phone,.ctas,.home,.appwin,.deck,.links #pdfFoot{display:none!important}
   .det::before,.det::after{display:none}
   .hero{display:block;padding:0 0 8mm}
   .name{gap:10px;margin-bottom:14px}.name .plate{transform:none!important}
@@ -361,3 +361,4 @@ body:has(.appwin:not([hidden])),body:has(.deck:not([hidden])){overflow:hidden}
   #contact,#apps .sub{display:none!important}
   .foot{opacity:1;padding:6mm 0 0}
 }
+@media (max-width:767px){#clock{display:inline-block;vertical-align:middle}#clock span{display:block;font-size:10px;line-height:1.2}#clock span+span::before{content:none}}

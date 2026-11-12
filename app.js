@@ -13,6 +13,11 @@
 
   const pdfName = l => `pdf/arsenius-purbandono-portfolio-${l}.pdf`;
   const stamp = s => `<span class="stamp ${s}">${esc(t("status." + s))}</span>`;
+  // address is assembled at runtime so it never sits in the HTML for scrapers
+  const MAIL = ["xzars009", "gmail.com"].join("@");
+  let mailShown = false;
+  const commit = c => `<div class="commit"><div class="c-head"><span class="hash">${esc(c.hash)}</span> <b>${esc(c[lang].t)}</b>${c.tag === "now" ? ' <span class="c-tag">HEAD</span>' : ""}</div>
+    <div class="c-meta">${esc(c[lang].when)} <span class="c-kind">(${esc(c.tag)})</span></div><p>${esc(c[lang].d)}</p></div>`;
   const icon = (a, cls = "sq") => `<span class="${cls}" style="background:${a.color};color:${a.ink}"><img src="${a.logo}" alt="" loading="lazy"></span>`;
 
   function render() {
@@ -21,6 +26,11 @@
     document.querySelectorAll("[data-i18n]").forEach(el => { const v = t(el.dataset.i18n); if (typeof v === "string") el.textContent = v; });
     document.querySelectorAll("[data-lang]").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang));
     ["pdfTop", "pdfHero", "pdfFoot"].forEach(id => { $("#" + id).href = pdfName(lang); });
+
+    $("#storyLog").innerHTML = STORY.map(commit).join("");
+    document.querySelectorAll(".mail-addr").forEach(el => { el.textContent = MAIL; });
+    document.querySelectorAll(".mail-btn").forEach(b => { if (mailShown) b.textContent = MAIL; });
+    tick();
 
     $("#icons").innerHTML = APPS.map((a, i) => `
       <button class="icon" data-i="${i}" aria-label="${esc(a.name)}">${icon(a)}
@@ -69,8 +79,21 @@
   win.addEventListener("click", e => { if (e.target === win) closeWin(); });
 
   // ---------- clock ----------
-  const tick = () => { $("#clock").textContent = "BDG " + new Date().toLocaleTimeString("en-GB", { timeZone: "Asia/Jakarta", hour: "2-digit", minute: "2-digit" }) + " WIB"; };
-  tick(); setInterval(tick, 15000);
+  function tick() {
+    const hm = tz => new Date().toLocaleTimeString("en-GB", { timeZone: tz, hour: "2-digit", minute: "2-digit" });
+    $("#clock").innerHTML = lang === "ja"
+      ? `<span>${esc(t("clock.city"))} ${hm("Asia/Jakarta")}</span><span>${esc(t("clock.jp"))} ${hm("Asia/Tokyo")}</span>`
+      : `<span>${esc(t("clock.city"))} ${hm("Asia/Jakarta")} WIB</span>`;
+  }
+  setInterval(tick, 15000);
+
+  // ---------- email: reveal + open the mail app only on click ----------
+  document.addEventListener("click", e => {
+    const b = e.target.closest(".mail-btn"); if (!b) return;
+    mailShown = true;
+    document.querySelectorAll(".mail-btn").forEach(x => { x.textContent = MAIL; });
+    location.href = "mailto:" + MAIL;
+  });
 
   // ---------- face "scan": type out an unsure verdict, cycle through variants ----------
   const out = $("#ocrOut"), ok = $(".sheet-ok");
@@ -95,7 +118,7 @@
   const so = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) links.forEach(a => a.classList.toggle("on", a.getAttribute("href") === "#" + e.target.id));
   }), { rootMargin: "-45% 0px -50% 0px" });
-  ["home", "apps", "lab", "about", "contact"].forEach(id => so.observe(document.getElementById(id)));
+  ["home", "about", "apps", "lab", "contact"].forEach(id => so.observe(document.getElementById(id)));
 
   // ---------- slideshow ----------
   const deck = $("#deck"), stage = $("#stage");
@@ -125,18 +148,15 @@
       `<div class="model">${stamp(m.status)}<h4>${esc(m.name)}</h4><div class="arch">${esc(m.arch)}</div><div class="metric">${esc(m.metric)}</div><p>${esc(m[lang])}</p></div>`).join("")}</div></div>`,
     sandbox: () => `<div class="sl sl-k"><h2 class="h2 h2-y">${esc(t("lab.sandbox"))}</h2><p class="sub">${esc(t("lab.sandbox.sub"))}</p><div class="sandbox">${SANDBOX.map(s =>
       `<div class="sand"><h4>${esc(s.name)}</h4><div class="metric">${esc(s.metric)}</div><div class="st">${esc(s.stack)}</div><p>${esc(s[lang])}</p></div>`).join("")}</div></div>`,
-    log: () => `<div class="sl"><h2 class="h2">${esc(t("about.title"))}</h2><div class="sl-log">
-      <div class="log mono">${[1, 2].map(i => `<div class="commit"><div class="c-head"><b>${esc(t(`about.job${i}`))}</b></div>
-        <div class="c-meta">${esc(t(`about.org${i}`))} · ${esc(t(`about.when${i}`))}</div><p>${esc(t(`about.job${i}d`))}</p></div>`).join("")}</div>
-      <div><div class="card card-y"><h3>${esc(t("about.lang"))}</h3><ul><li>${esc(t("about.ja"))}</li><li>${esc(t("about.en"))}</li></ul></div>
-        <p class="avail">${esc(t("about.avail"))}</p></div></div></div>`,
+    log: part => `<div class="sl sl-tl"><h2 class="h2">${esc(t("about.title"))}</h2><p class="sub mono">${esc(t("about.sub"))}</p>
+      <div class="log mono">${part.map(commit).join("")}</div></div>`,
     end: () => `<div class="sl sl-k sl-end"><h2 class="h2 h2-y">${esc(t("sl.thanks"))}</h2><p class="sub">${esc(t("sl.thanks2"))}</p>
-      <span class="plate plate-xl mail">xzars009@gmail.com</span>
+      <button type="button" class="plate plate-xl mail mail-btn">${esc(mailShown ? MAIL : t("contact.mailbtn"))}</button>
       <p class="mono sl-links"><a href="https://www.linkedin.com/in/arsenius-purbandono-a05a65212/" target="_blank" rel="noopener">linkedin.com/in/arsenius-purbandono-a05a65212</a> · <a href="https://github.com/xzars-git" target="_blank" rel="noopener">github.com/xzars-git</a></p></div>`
   };
 
   function buildSlides() {
-    slides = [S.title(), S.stats(), S.pipe(), ...APPS.map(S.app), S.story(), S.models(), S.sandbox(), S.log(), S.end()];
+    slides = [S.title(), S.log(STORY.slice(0, 6)), S.log(STORY.slice(6, 10)), S.log(STORY.slice(10)), S.stats(), S.pipe(), ...APPS.map(S.app), S.story(), S.models(), S.sandbox(), S.end()];
     stage.innerHTML = slides.map((h, i) => `<section class="slide" data-n="${i}" aria-hidden="true">${h}</section>`).join("");
     $("#deckHint").textContent = t("sl.hint");
     go(Math.min(cur, slides.length - 1));

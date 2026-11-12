@@ -2,7 +2,7 @@
 window.I18N = {
   en: {
     "meta.title": "Arsenius Purbandono · Flutter dev who reads plates",
-    "nav.home": "Home", "nav.apps": "Apps", "nav.lab": "Lab", "nav.about": "Log", "nav.contact": "Contact",
+    "nav.home": "Home", "nav.apps": "Apps", "nav.lab": "Lab", "nav.about": "Story", "nav.contact": "Contact",
     "pdf": "PDF", "slides.open": "Slideshow",
     "hero.kicker": "FLUTTER DEV · ON-DEVICE AI",
     "hero.lead": "I write Flutter apps for tax officers in West Java. Lately I've been teaching those apps to read license plates on the phone itself, no internet needed.",
@@ -36,13 +36,8 @@ window.I18N = {
     "lab.story.p3": "It only went into the app after it beat ML Kit on that test set: 76% vs 56% exact match. Dropping ML Kit also took about 30 MB off the APK.",
     "lab.sandbox": "SANDBOX",
     "lab.sandbox.sub": "Side projects I did to learn NLP and transfer learning.",
-    "about.title": "WORK LOG",
-    "about.exp": "Work", "about.cert": "Certificates", "about.lang": "Languages", "about.edu": "School",
-    "about.job1": "Mobile Application Developer", "about.org1": "West Java Revenue Agency (Bapenda Jabar)", "about.when1": "Feb 2023 – now",
-    "about.job1d": "Flutter apps for vehicle and tax tracing, Samsat counters and field checks. Codebases split into 4–19 packages, MVC and Clean Architecture, updates through Shorebird and OTA. I also trained and shipped the plate-recognition models.",
-    "about.job2": "Mobile Developer Intern", "about.org2": "PT Safepedia Global Teknologi, Jakarta", "about.when2": "Aug – Dec 2022",
-    "about.job2d": "Native Android in Kotlin for an app used by PT Antam's mining operators. Bug fixes and new features.",
-    "about.edu1": "Information Systems & Technology Education, Universitas Pendidikan Indonesia (2019–2023)",
+    "about.title": "HOW I GOT HERE", "about.sub": "git log --reverse arsenius. Oldest first.", "contact.mailbtn": "Send me an email", "clock.city": "Bandung",
+    "about.cert": "Certificates", "about.lang": "Languages",
     "about.en": "English: B2 (EF SET 54/100)",
     "about.ja": "Japanese: beginner. Working through Minna no Nihongo, aiming for JLPT N4",
     "about.id": "Indonesian: native",
@@ -59,7 +54,7 @@ window.I18N = {
 
   id: {
     "meta.title": "Arsenius Purbandono · Flutter dev yang ngajarin HP baca plat",
-    "nav.home": "Home", "nav.apps": "App", "nav.lab": "Lab", "nav.about": "Log", "nav.contact": "Kontak",
+    "nav.home": "Home", "nav.apps": "App", "nav.lab": "Lab", "nav.about": "Cerita", "nav.contact": "Kontak",
     "pdf": "PDF", "slides.open": "Slideshow",
     "hero.kicker": "FLUTTER DEV · AI DI DALAM HP",
     "hero.lead": "Gue bikin app Flutter buat petugas pajak di Jabar. Belakangan gue ngajarin app-nya baca plat nomor langsung di HP, gak perlu internet.",
@@ -93,13 +88,8 @@ window.I18N = {
     "lab.story.p3": "Baru gue masukin ke app setelah dia ngalahin ML Kit di data uji itu: 76% vs 56% persis. Bonusnya, APK turun sekitar 30 MB.",
     "lab.sandbox": "SANDBOX",
     "lab.sandbox.sub": "Proyek iseng buat belajar NLP sama transfer learning.",
-    "about.title": "LOG KERJA",
-    "about.exp": "Kerja", "about.cert": "Sertifikat", "about.lang": "Bahasa", "about.edu": "Kuliah",
-    "about.job1": "Mobile Application Developer", "about.org1": "Bapenda Provinsi Jawa Barat", "about.when1": "Feb 2023 – sekarang",
-    "about.job1d": "App Flutter buat nelusurin kendaraan dan pajak, loket Samsat, sama cek lapangan. Codebase dipecah 4–19 package, MVC dan Clean Architecture, update lewat Shorebird dan OTA. Model baca plat juga gue yang training dan rilis.",
-    "about.job2": "Intern Mobile Developer", "about.org2": "PT Safepedia Global Teknologi, Jakarta", "about.when2": "Agu – Des 2022",
-    "about.job2d": "Android native pakai Kotlin buat app operator tambang PT Antam. Benerin bug, nambah fitur.",
-    "about.edu1": "Pendidikan Sistem dan Teknologi Informasi, Universitas Pendidikan Indonesia (2019–2023)",
+    "about.title": "PERJALANAN GUE", "about.sub": "git log --reverse arsenius. Dari yang paling lama.", "contact.mailbtn": "Kirim email ke gue", "clock.city": "Bandung",
+    "about.cert": "Sertifikat", "about.lang": "Bahasa",
     "about.en": "Inggris: B2 (EF SET 54/100)",
     "about.ja": "Jepang: masih pemula, lagi ngulik Minna no Nihongo, target JLPT N4",
     "about.id": "Indonesia: bahasa ibu",
@@ -150,13 +140,8 @@ window.I18N = {
     "lab.story.p3": "そのテストデータでML Kitを上回ってから、アプリに組み込みました（完全一致率76%対56%）。ML Kitを外したことで、APKも約30MB小さくなりました。",
     "lab.sandbox": "サンドボックス",
     "lab.sandbox.sub": "NLPと転移学習を学ぶために作った個人プロジェクトです。",
-    "about.title": "経歴",
-    "about.exp": "職歴", "about.cert": "資格", "about.lang": "語学", "about.edu": "学歴",
-    "about.job1": "モバイルアプリケーション開発者", "about.org1": "西ジャワ州歳入庁（Bapenda Jabar）", "about.when1": "2023年2月〜現在",
-    "about.job1d": "車両・税の照会、Samsat窓口、現場確認に使うFlutterアプリを開発しています。4〜19パッケージに分けた構成、MVC／Clean Architecture、ShorebirdとOTAでの配信。プレート認識モデルの学習とリリースも担当しました。",
-    "about.job2": "モバイル開発インターン", "about.org2": "PT Safepedia Global Teknologi（ジャカルタ）", "about.when2": "2022年8月〜12月",
-    "about.job2d": "PT Antamの鉱山オペレーター向けアプリを、KotlinでネイティブAndroid開発しました。不具合修正と機能追加。",
-    "about.edu1": "インドネシア教育大学 情報システム・技術教育学科（2019〜2023年）",
+    "about.title": "これまでの歩み", "about.sub": "git log --reverse arsenius。古い順に並べています。", "contact.mailbtn": "メールを送る", "clock.city": "バンドン", "clock.jp": "日本",
+    "about.cert": "資格", "about.lang": "語学",
     "about.en": "英語：B2（EF SET 54/100）",
     "about.ja": "日本語：初学者。『みんなの日本語』で勉強中、JLPT N4が目標",
     "about.id": "インドネシア語：母語",
@@ -178,21 +163,21 @@ window.APPS = [
     id: "pp", name: "Panah Pasopati", abbr: "PP", color: "#118C5B", ink: "#fff", status: "prod", logo: "logos/pp.png",
     stack: ["Flutter", "TFLite", "YOLO", "Shorebird", "Firebase", "Kotlin"],
     en: { what: "Officers point the camera at a plate and get the vehicle's tax record. Used in the field across West Java.",
-      role: ["Built the plate-recognition module (Teman Pamor): detection, color, OCR, all on the phone", "Patched the Android camera plugin in Kotlin so the camera stops restarting 3–4 times", "Locked down OTA updates: HTTPS only, newer versions only, SHA-256 check"] },
+      role: ["Built the plate-recognition module (Teman Pamor): detection, color, OCR, all on the phone", "Patched the Android camera plugin in Kotlin so the camera stops restarting 3–4 times", "Locked down OTA updates: HTTPS only, newer versions only, SHA-256 check", "Field rules: officers must be inside a location radius, a warning if the car was already traced, an owner-info form, and data scoped to each role's region", "Token refresh and forced logout when a session dies, plus a tracing report with a date filter"] },
     id: { what: "Petugas tinggal arahin kamera ke plat, data pajak kendaraannya langsung keluar. Dipakai di lapangan se-Jabar.",
-      role: ["Bikin modul baca plat (Teman Pamor): deteksi, warna, OCR, semuanya jalan di HP", "Nambal plugin kamera Android pakai Kotlin, biar kamera gak restart 3–4 kali", "Ngunci update OTA: wajib HTTPS, cuma boleh versi lebih baru, ada cek SHA-256"] },
+      role: ["Bikin modul baca plat (Teman Pamor): deteksi, warna, OCR, semuanya jalan di HP", "Nambal plugin kamera Android pakai Kotlin, biar kamera gak restart 3–4 kali", "Ngunci update OTA: wajib HTTPS, cuma boleh versi lebih baru, ada cek SHA-256", "Aturan lapangan: petugas wajib di dalam radius lokasi, ada peringatan kalau mobilnya udah pernah ditelusur, form info pemilik, data dibatesin per wilayah sesuai role", "Refresh token dan auto logout kalau sesi mati, plus laporan penelusuran pake filter tanggal"] },
     ja: { what: "カメラをプレートに向けると、車両税の情報が出てきます。西ジャワ州の現場で使われています。",
-      role: ["プレート認識モジュール（Teman Pamor）を開発：検出・色・OCRをすべてスマホ上で", "AndroidカメラプラグインをKotlinで修正し、3〜4回の再起動をなくした", "OTA更新を強化：HTTPSのみ、新しい版のみ、SHA-256で確認"] }
+      role: ["プレート認識モジュール（Teman Pamor）を開発：検出・色・OCRをすべてスマホ上で", "AndroidカメラプラグインをKotlinで修正し、3〜4回の再起動をなくした", "OTA更新を強化：HTTPSのみ、新しい版のみ、SHA-256で確認", "現場ルール：位置の半径チェック、照会済み車両の警告、所有者情報フォーム、ロールごとの地域でデータを制限", "トークン更新とセッション切れ時の強制ログアウト、日付で絞り込める照会レポート"] }
   },
   {
     id: "atos", name: "ATOS PAMOR", abbr: "AP", color: "#fff", ink: "#111", status: "prod", logo: "logos/atos.png",
     stack: ["Flutter", "MVC", "Dio", "Hive", "flutter_map", "Geolocator", "OTA"],
     en: { what: "The heavier tracing app for the special task force: data checks, vehicle history and the paperwork for collecting overdue tax.",
-      role: ["Photo evidence gets a watermark with officer ID, GPS and the street address", "Every controller handles errors the same way now, and users see the real backend message", "Moved the app to a new major Flutter and Dart version"] },
+      role: ["Photo evidence gets a watermark with officer ID, GPS and the street address", "Every controller handles errors the same way now, and users see the real backend message", "Moved the app to a new major Flutter and Dart version", "Gallery photos lost GPS in the watermark (Android 10+ strips it). Shipped a fix that works as a Shorebird patch, and wrote down the full fix for the next APK", "Wrote the API integration and testing/debugging documents for ATOS PAMOR and Panah Pasopati"] },
     id: { what: "Versi beratnya buat tim khusus: cek data, riwayat kendaraan, sampai urusan administrasi nagih pajak nunggak.",
-      role: ["Foto bukti dikasih watermark: ID petugas, GPS, sama alamat jalannya", "Semua controller sekarang handle error dengan cara yang sama, user liat pesan asli dari backend", "Migrasi app ke versi mayor Flutter dan Dart yang baru"] },
+      role: ["Foto bukti dikasih watermark: ID petugas, GPS, sama alamat jalannya", "Semua controller sekarang handle error dengan cara yang sama, user liat pesan asli dari backend", "Migrasi app ke versi mayor Flutter dan Dart yang baru", "Foto dari galeri suka gak ada lokasinya di watermark (Android 10+ ngapus GPS-nya). Gue bikin fix yang bisa lewat patch Shorebird, terus nyatet fix lengkapnya buat APK berikutnya", "Nulis dokumen integrasi API sama dokumen testing & debugging buat ATOS PAMOR dan Panah Pasopati"] },
     ja: { what: "特別チーム向けの照会アプリ。データ確認、車両の履歴、滞納税の回収に必要な事務作業まで扱います。",
-      role: ["証拠写真に職員ID・GPS・住所の透かしを入れる", "全コントローラーのエラー処理をそろえ、バックエンドの実際のメッセージを表示", "Flutter／Dartの新しいメジャーバージョンへ移行"] }
+      role: ["証拠写真に職員ID・GPS・住所の透かしを入れる", "全コントローラーのエラー処理をそろえ、バックエンドの実際のメッセージを表示", "Flutter／Dartの新しいメジャーバージョンへ移行", "ギャラリー写真の透かしから位置情報が消える問題（Android 10以降がGPSを削除）を、Shorebirdパッチで直せる形で修正し、次のAPK向けの完全な対策も文書化", "ATOS PAMORとPanah PasopatiのAPI連携資料とテスト・デバッグ資料を作成"] }
   },
   {
     id: "sj", name: "SAKTI JAWARA", abbr: "SJ", color: "#E3262E", ink: "#fff", status: "prod", logo: "logos/sj.svg", ph: true,
@@ -227,12 +212,12 @@ window.APPS = [
   {
     id: "semar", name: "SEMAR", abbr: "SE", color: "#fff", ink: "#111", status: "prod", logo: "logos/semar.png",
     stack: ["Flutter", "Android + Web", "Multi-package", "Hive"],
-    en: { what: "Water tax. Officers record usage in the field, a verifier approves it.",
-      role: ["Split into packages: recording, verification, history", "One codebase for Android and the web", "Works offline first, syncs later (Hive)"] },
-    id: { what: "Pajak air. Petugas nyatet pemakaian di lapangan, verifikator yang approve.",
-      role: ["Dipecah jadi package: pencatatan, verifikasi, riwayat", "Satu codebase buat Android sama web", "Offline dulu, sinkron belakangan (Hive)"] },
-    ja: { what: "水税のアプリ。職員が現場で使用量を記録し、検証担当が承認します。",
-      role: ["記録・検証・履歴をパッケージに分割", "AndroidとWebを1つのコードで", "オフラインで先に保存し、あとで同期（Hive）"] }
+    en: { what: "Water tax. Officers visit taxpayer companies and record their water-meter readings, then a verifier accepts or rejects each one.",
+      role: ["Split into packages: recording, verification and the two histories", "One codebase for Android and the web. Detail pages load from ?id= so a browser refresh doesn't lose them", "Menus by role (recorder, verifier, admin). Other roles are turned away at login", "Second evidence photo and notes on each reading, an update check, Shorebird patches, a server switcher and a debug logger"] },
+    id: { what: "Pajak air. Petugas dateng ke perusahaan wajib pajak, nyatet angka meter airnya, terus verifikator nerima atau nolak.",
+      role: ["Dipecah jadi package: pencatatan, verifikasi, sama dua riwayatnya", "Satu codebase buat Android sama web. Halaman detail ngambil data dari ?id=, jadi aman di-refresh", "Menu sesuai role (pencatat, verifikator, admin). Role lain ditolak pas login", "Foto bukti kedua plus keterangan di tiap catatan, cek update, patch Shorebird, server switcher, sama debug logger"] },
+    ja: { what: "水税のアプリ。職員が納税企業を訪ねて水道メーターの値を記録し、検証担当が承認または却下します。",
+      role: ["記録・検証・2つの履歴をパッケージに分割", "AndroidとWebを1つのコードで。詳細画面は?idから読み込むので、再読み込みしても消えない", "ロール別メニュー（記録・検証・管理）。それ以外のロールはログイン時に拒否", "2枚目の証拠写真とメモ、更新チェック、Shorebirdパッチ、サーバー切替、デバッグロガー"] }
   },
   {
     id: "pab", name: "Pajak Alat Berat", abbr: "AB", color: "#F28C28", ink: "#111", status: "prod", logo: "logos/ab.svg", ph: true,
@@ -248,11 +233,11 @@ window.APPS = [
     id: "linmas", name: "Aing Linmas", abbr: "AL", color: "#7C3AED", ink: "#fff", status: "proto", logo: "logos/al.svg", ph: true,
     stack: ["Flutter", "Android + iOS", "QR", "PDF"],
     en: { what: "Phone version of a sign-up system for Linmas community-protection members, from province down to village.",
-      role: ["3-step sign-up with an ID-number check and drafts that save themselves", "Digital member card with a QR code, saves as image or PDF", "Runs on fake data for now, no backend yet"] },
+      role: ["3-step sign-up with an ID-number check and drafts that save themselves", "Digital member card with a QR code, saves as image or PDF", "Admin side: recap dashboard by region, verify or reject with a reason, scan a card's QR to check it", "Runs on fake data for now, no backend yet"] },
     id: { what: "Versi HP sistem pendaftaran anggota Linmas, dari provinsi sampai desa.",
-      role: ["Daftar 3 langkah, ada Cek NIK dan draf ke-save otomatis", "Kartu anggota digital pake QR, bisa disimpen jadi gambar atau PDF", "Masih pake data dummy, backend-nya belum nyambung"] },
+      role: ["Daftar 3 langkah, ada Cek NIK dan draf ke-save otomatis", "Kartu anggota digital pake QR, bisa disimpen jadi gambar atau PDF", "Sisi admin: dashboard rekap per wilayah, verifikasi terima/tolak pake alasan, scan QR kartu buat ngecek asli apa nggak", "Masih pake data dummy, backend-nya belum nyambung"] },
     ja: { what: "Linmas（地域防災隊）隊員の登録システムのスマホ版。州から村まで対応します。",
-      role: ["身分証番号の確認と自動下書き付きの3ステップ登録", "QR付きのデジタル隊員証（画像・PDFで保存）", "今は仮データで動作、バックエンドは未接続"] }
+      role: ["身分証番号の確認と自動下書き付きの3ステップ登録", "QR付きのデジタル隊員証（画像・PDFで保存）", "管理者側：地域別の集計ダッシュボード、理由付きの承認・却下、隊員証のQRスキャンで真偽確認", "今は仮データで動作、バックエンドは未接続"] }
   }
 ];
 
@@ -276,4 +261,47 @@ window.SANDBOX = [
     en: "1.6M reviews to train, 400k to test.", id: "1,6 juta review buat training, 400 ribu buat tes.", ja: "学習160万件、テスト40万件。" },
   { name: "Casting Defect Inspection", metric: "91.8% val acc", stack: "MobileNetV2 transfer learning · Keras · Tkinter",
     en: "Good vs defective pump impellers, 1,016 factory photos.", id: "Impeller pompa bagus vs cacat, 1.016 foto pabrik.", ja: "ポンプ羽根車の良品・不良品、工場写真1,016枚。" }
+];
+
+// Life story, oldest first. tag: edu | work | cert | ai | now
+window.STORY = [
+  { hash: "0a1f3c2", tag: "edu", en: { when: "2016 – 2019", t: "SMKN 1 Simpang Empat", d: "Vocational high school, multimedia major." },
+    id: { when: "2016 – 2019", t: "SMKN 1 Simpang Empat", d: "SMK jurusan Multimedia." },
+    ja: { when: "2016〜2019年", t: "SMKN 1 Simpang Empat", d: "職業高校のマルチメディア科。" } },
+  { hash: "3b7e9d0", tag: "edu", en: { when: "2019 – 2023", t: "Universitas Pendidikan Indonesia", d: "Information Systems & Technology Education (PSTI), Bandung." },
+    id: { when: "2019 – 2023", t: "Universitas Pendidikan Indonesia", d: "Kuliah Pendidikan Sistem dan Teknologi Informasi (PSTI) di Bandung." },
+    ja: { when: "2019〜2023年", t: "インドネシア教育大学", d: "バンドンで情報システム・技術教育（PSTI）を専攻。" } },
+  { hash: "5c21a8e", tag: "edu", en: { when: "2021", t: "HIMA PSTI", d: "Chaired the legislative board of the department's student association." },
+    id: { when: "2021", t: "HIMA PSTI", d: "Jadi ketua badan legislatif himpunan mahasiswa jurusan." },
+    ja: { when: "2021年", t: "HIMA PSTI", d: "学科の学生会で立法委員会の委員長を務めた。" } },
+  { hash: "7d40b15", tag: "work", en: { when: "Aug 2021 – Jan 2022", t: "MSIB · Agate", d: "Game development program under Kampus Merdeka." },
+    id: { when: "Agu 2021 – Jan 2022", t: "MSIB · Agate", d: "Program game development dari Kampus Merdeka." },
+    ja: { when: "2021年8月〜2022年1月", t: "MSIB・Agate", d: "Kampus Merdekaのゲーム開発プログラム。" } },
+  { hash: "8e93f6a", tag: "work", en: { when: "Mar – Jul 2022", t: "MSIB · Nongsa Digital Park", d: "Mobile and cloud development program." },
+    id: { when: "Mar – Jul 2022", t: "MSIB · Nongsa Digital Park", d: "Program mobile sama cloud development." },
+    ja: { when: "2022年3月〜7月", t: "MSIB・Nongsa Digital Park", d: "モバイル・クラウド開発のプログラム。" } },
+  { hash: "5a1e922", tag: "work", en: { when: "Aug – Dec 2022", t: "Mobile Developer Intern · PT Safepedia", d: "Native Android in Kotlin for an app used by PT Antam's mining operators. Bug fixes and new features." },
+    id: { when: "Agu – Des 2022", t: "Intern Mobile Developer · PT Safepedia", d: "Android native pakai Kotlin buat app operator tambang PT Antam. Benerin bug, nambah fitur." },
+    ja: { when: "2022年8月〜12月", t: "モバイル開発インターン・PT Safepedia", d: "PT Antamの鉱山オペレーター向けアプリをKotlinでネイティブAndroid開発。不具合修正と機能追加。" } },
+  { hash: "a76c0de", tag: "work", en: { when: "Feb 2023", t: "Mobile Application Developer · Bapenda Jabar", d: "Joined West Java's revenue agency. Flutter apps for vehicle-tax tracing, Samsat counters and field checks, split into 4–19 packages, shipped through Shorebird and OTA. Still here." },
+    id: { when: "Feb 2023", t: "Mobile Application Developer · Bapenda Jabar", d: "Masuk Bapenda Jawa Barat. Bikin app Flutter buat nelusurin pajak kendaraan, loket Samsat, sama cek lapangan. Codebase dipecah 4–19 package, update lewat Shorebird dan OTA. Sampe sekarang masih di sini." },
+    ja: { when: "2023年2月", t: "モバイルアプリ開発者・西ジャワ州歳入庁", d: "車両税の照会、Samsat窓口、現場確認のFlutterアプリを開発。4〜19パッケージ構成、ShorebirdとOTAで配信。現在も在籍。" } },
+  { hash: "b2c4e71", tag: "cert", en: { when: "Jun 2024", t: "EF SET English B2", d: "54/100." },
+    id: { when: "Jun 2024", t: "EF SET English B2", d: "Skor 54/100." },
+    ja: { when: "2024年6月", t: "EF SET 英語 B2", d: "54/100。" } },
+  { hash: "c9f1d04", tag: "work", en: { when: "Oct – Dec 2024", t: "Community Manager · Web3 Developer Indonesia", d: "Ran the community side for a developer group, next to the day job." },
+    id: { when: "Okt – Des 2024", t: "Community Manager · Web3 Developer Indonesia", d: "Ngurus komunitas developer, nyambi di luar kerjaan utama." },
+    ja: { when: "2024年10月〜12月", t: "コミュニティマネージャー・Web3 Developer Indonesia", d: "本業と並行して開発者コミュニティを運営。" } },
+  { hash: "d0a8b39", tag: "cert", en: { when: "Aug → Nov 2025", t: "BNSP Mobile Programmer: Junior, then Senior", d: "Indonesia's national certification, both levels in one year." },
+    id: { when: "Agu → Nov 2025", t: "BNSP Mobile Programmer: Junior, terus Senior", d: "Sertifikasi nasional, dua level kelar dalam setahun." },
+    ja: { when: "2025年8月→11月", t: "BNSP モバイルプログラマー：ジュニア→シニア", d: "インドネシアの国家資格。1年で2段階を取得。" } },
+  { hash: "e57c2fa", tag: "ai", en: { when: "Jan 2026", t: "Started building my own plate models", d: "ML Kit kept misreading Indonesian plates in the field. Began collecting data, wrote a labeling tool, trained a detector." },
+    id: { when: "Jan 2026", t: "Mulai bikin model plat sendiri", d: "ML Kit sering salah baca plat Indonesia di lapangan. Mulai ngumpulin data, bikin labeling tool, training detector." },
+    ja: { when: "2026年1月", t: "自前のプレート認識モデル開発を開始", d: "現場でML Kitがインドネシアのプレートを誤読することが多かった。データ収集、ラベリングツール作成、検出器の学習から始めた。" } },
+  { hash: "f13b8c6", tag: "ai", en: { when: "Oct – Nov 2026", t: "Color classifier, then custom OCR in production", d: "Panah Pasopati v4.5.0 dropped ML Kit. Exact plate reads went from 56% to 76%." },
+    id: { when: "Okt – Nov 2026", t: "Klasifikasi warna, terus OCR sendiri masuk produksi", d: "Panah Pasopati v4.5.0 udah gak pake ML Kit. Plat kebaca persis naik dari 56% ke 76%." },
+    ja: { when: "2026年10月〜11月", t: "色分類、続いて自作OCRを本番投入", d: "Panah Pasopati v4.5.0でML Kitを廃止。完全一致の読み取りが56%から76%に。" } },
+  { hash: "HEAD", tag: "now", en: { when: "now", t: "Learning Japanese, heading to Japan", d: "Working through Minna no Nihongo toward JLPT N4. Looking for a software or AI engineer role in Japan from the second half of 2027." },
+    id: { when: "sekarang", t: "Belajar Jepang, otw Jepang", d: "Lagi ngulik Minna no Nihongo, target JLPT N4. Nyari kerja software atau AI engineer di Jepang mulai paruh kedua 2027." },
+    ja: { when: "現在", t: "日本語を勉強中、日本へ", d: "『みんなの日本語』でJLPT N4を目指しています。2027年後半から日本でソフトウェア／AIエンジニアとして働きたいです。" } }
 ];

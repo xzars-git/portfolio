@@ -18,7 +18,7 @@
 
 <!-- status bar = site header -->
 <header class="statusbar" role="banner">
-  <div class="sb-left"><span class="rec">●</span> <span id="clock">BDG --:-- WIB</span></div>
+  <div class="sb-left"><span class="rec">●</span> <span id="clock">Bandung --:-- WIB</span></div>
   <a class="sb-logo plate plate-sm" href="#home" aria-label="Home">AP·2023</a>
   <div class="sb-right">
     <div class="langs" role="group" aria-label="Language">
@@ -41,7 +41,7 @@
       </h1>
       <p class="lead" data-i18n="hero.lead"></p>
       <p class="where mono" data-i18n="hero.where"></p>
-      <p class="print-only mono">xzars009@gmail.com · linkedin.com/in/arsenius-purbandono-a05a65212 · github.com/xzars-git · arsenius-portfolio.vercel.app</p>
+      <p class="print-only mono"><span class="mail-addr"></span> · linkedin.com/in/arsenius-purbandono-a05a65212 · github.com/xzars-git · arsenius-portfolio.vercel.app</p>
       <div class="ctas">
         <a class="btn btn-y" href="#apps" data-i18n="hero.cta1"></a>
         <a class="btn btn-k" href="?slides=1" data-slides data-i18n="hero.cta3"></a>
@@ -66,7 +66,31 @@
     </div>
   </section>
 
-  <div class="marquee" aria-hidden="true"><div class="marquee-track mono">FLUTTER ✦ DART ✦ YOLO ✦ TFLITE ✦ PYTORCH ✦ TENSORFLOW ✦ KERAS ✦ ONNX ✦ OPENCV ✦ KOTLIN ✦ SHOREBIRD ✦ FIREBASE ✦ HIVE ✦ BLOC ✦ CLEAN ARCHITECTURE ✦ CNN+CTC ✦ MOBILENETV2 ✦&nbsp;</div></div>
+  <!-- STORY -->
+  <section id="about" class="block">
+    <h2 class="h2" data-i18n="about.title"></h2>
+    <p class="sub mono" data-i18n="about.sub"></p>
+    <div class="about">
+      <div class="log mono" id="storyLog"></div>
+      <div class="side">
+        <div class="card">
+          <h3 data-i18n="about.cert"></h3>
+          <ul>
+            <li><b>BNSP Senior Mobile Programmer</b> · 2025-11</li>
+            <li><b>BNSP Junior Mobile Programmer</b> · 2025-08</li>
+            <li><b>EF SET English B2</b> (54/100) · 2024-06</li>
+            <li>MSIB Mobile &amp; Cloud Dev, Nongsa Digital Park · 2022</li>
+            <li>MSIB Game Development, Agate · 2021–22</li>
+          </ul>
+        </div>
+        <div class="card card-y">
+          <h3 data-i18n="about.lang"></h3>
+          <ul><li data-i18n="about.ja"></li><li data-i18n="about.en"></li><li data-i18n="about.id"></li></ul>
+        </div>
+        <p class="avail" data-i18n="about.avail"></p>
+      </div>
+    </div>
+  </section>
 
   <!-- STATS -->
   <section class="block">
@@ -130,50 +154,11 @@
     <div class="sandbox" id="sandbox"></div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="block">
-    <h2 class="h2" data-i18n="about.title"></h2>
-    <div class="about">
-      <div class="log mono">
-        <h3 data-i18n="about.exp"></h3>
-        <div class="commit">
-          <div class="c-head"><span class="hash">a76c0de</span> <b data-i18n="about.job1"></b> <span class="c-tag">HEAD</span></div>
-          <div class="c-meta"><span data-i18n="about.org1"></span> · <span data-i18n="about.when1"></span></div>
-          <p data-i18n="about.job1d"></p>
-        </div>
-        <div class="commit">
-          <div class="c-head"><span class="hash">5a1e922</span> <b data-i18n="about.job2"></b></div>
-          <div class="c-meta"><span data-i18n="about.org2"></span> · <span data-i18n="about.when2"></span></div>
-          <p data-i18n="about.job2d"></p>
-        </div>
-        <h3 data-i18n="about.edu"></h3>
-        <p data-i18n="about.edu1"></p>
-      </div>
-      <div class="side">
-        <div class="card">
-          <h3 data-i18n="about.cert"></h3>
-          <ul>
-            <li><b>BNSP Senior Mobile Programmer</b> · 2025-11</li>
-            <li><b>BNSP Junior Mobile Programmer</b> · 2025-08</li>
-            <li><b>EF SET English B2</b> (54/100) · 2024-06</li>
-            <li>MSIB Mobile &amp; Cloud Dev, Nongsa Digital Park · 2022</li>
-            <li>MSIB Game Development, Agate · 2021–22</li>
-          </ul>
-        </div>
-        <div class="card card-y">
-          <h3 data-i18n="about.lang"></h3>
-          <ul><li data-i18n="about.ja"></li><li data-i18n="about.en"></li><li data-i18n="about.id"></li></ul>
-        </div>
-        <p class="avail" data-i18n="about.avail"></p>
-      </div>
-    </div>
-  </section>
-
   <!-- CONTACT -->
   <section id="contact" class="block block-k contact">
     <h2 class="h2 h2-y" data-i18n="contact.title"></h2>
     <p class="sub" data-i18n="contact.sub"></p>
-    <a class="plate plate-xl mail det" data-label="email 1.00" href="mailto:xzars009@gmail.com">xzars009@gmail.com</a>
+    <button type="button" class="plate plate-xl mail det mail-btn" data-label="email 1.00" data-i18n="contact.mailbtn"></button>
     <div class="links mono">
       <a href="https://www.linkedin.com/in/arsenius-purbandono-a05a65212/" target="_blank" rel="noopener">LinkedIn ↗</a>
       <a href="https://github.com/xzars-git" target="_blank" rel="noopener">GitHub ↗</a>
@@ -223,9 +208,9 @@
 <!-- mobile bottom nav -->
 <nav class="bottomnav mono" aria-label="Sections">
   <a href="#home"><i>⌂</i><span data-i18n="nav.home"></span></a>
+  <a href="#about"><i>≡</i><span data-i18n="nav.about"></span></a>
   <a href="#apps"><i>▦</i><span data-i18n="nav.apps"></span></a>
   <a href="#lab"><i>◎</i><span data-i18n="nav.lab"></span></a>
-  <a href="#about"><i>≡</i><span data-i18n="nav.about"></span></a>
   <a href="#contact"><i>✉</i><span data-i18n="nav.contact"></span></a>
 </nav>
 
