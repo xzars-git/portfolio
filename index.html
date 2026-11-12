@@ -24,6 +24,7 @@
     <div class="langs" role="group" aria-label="Language">
       <button data-lang="en">EN</button><button data-lang="id">ID</button><button data-lang="ja">日本</button>
     </div>
+    <button class="slides-btn" data-slides aria-label="Slideshow">▶ <span data-i18n="slides.open">Slideshow</span></button>
     <a class="pdf-btn" id="pdfTop" download><span data-i18n="pdf">PDF</span> ↓</a>
     <span class="battery" title="OCR exact match">76%<i></i></span>
   </div>
@@ -43,6 +44,7 @@
       <p class="print-only mono">xzars009@gmail.com · linkedin.com/in/arsenius-purbandono-a05a65212 · github.com/xzars-git · arsenius-portfolio.vercel.app</p>
       <div class="ctas">
         <a class="btn btn-y" href="#apps" data-i18n="hero.cta1"></a>
+        <a class="btn btn-k" href="?slides=1" data-slides data-i18n="hero.cta3"></a>
         <a class="btn" id="pdfHero" download data-i18n="hero.cta2"></a>
       </div>
     </div>
@@ -50,18 +52,15 @@
     <div class="phone" aria-hidden="true">
       <div class="phone-notch"></div>
       <div class="vf">
-        <div class="vf-street"></div>
-        <div class="vf-car">
-          <div class="vf-plate"><span>D 2023 AI</span><small>11·27</small></div>
-          <div class="vf-box"><b>plate 0.97</b></div>
-        </div>
+        <img class="vf-photo" src="me.jpg" alt="">
+        <div class="vf-box"><b data-i18n="phone.box"></b></div>
         <div class="vf-scan"></div>
         <div class="vf-corners"></div>
         <div class="vf-tag mono"><span class="blink">●</span> <span data-i18n="phone.scan"></span></div>
       </div>
       <div class="sheet mono">
         <div class="sheet-row"><span data-i18n="phone.read"></span><b id="ocrOut">_</b></div>
-        <div class="sheet-row small"><span data-i18n="phone.color"></span><span>conf 0.97</span></div>
+        <div class="sheet-row small"><span data-i18n="phone.color"></span><span>conf 0.51</span></div>
         <div class="sheet-ok" data-i18n="phone.ok"></div>
       </div>
     </div>
@@ -195,6 +194,7 @@
     <div class="aw-bar" id="awBar"><span class="mono" id="awStatus"></span><button id="awClose" class="mono">✕ <span data-i18n="apps.close"></span></button></div>
     <div class="aw-body">
       <div class="aw-icon" id="awIcon"></div>
+      <small class="mono aw-ph" id="awPh"></small>
       <h3 id="awTitle"></h3>
       <p id="awWhat"></p>
       <h4 class="mono" data-i18n="apps.role"></h4>
@@ -203,6 +203,20 @@
       <div class="chips" id="awStack"></div>
     </div>
     <div class="aw-home"></div>
+  </div>
+</div>
+
+<!-- slideshow -->
+<div class="deck" id="deck" hidden role="dialog" aria-modal="true" aria-label="Slideshow">
+  <div class="stage" id="stage"></div>
+  <div class="deck-bar mono">
+    <button id="deckPrev" aria-label="Previous">◀</button>
+    <span id="deckCount">1 / 1</span>
+    <button id="deckNext" aria-label="Next">▶</button>
+    <span class="deck-hint" id="deckHint"></span>
+    <button id="deckFull" aria-label="Fullscreen">⛶</button>
+    <button id="deckClose" aria-label="Close">✕</button>
+    <div class="deck-prog"><i id="deckProg"></i></div>
   </div>
 </div>
 
