@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arsenius Purbandono: Mobile Dev × On-device AI</title>
+<meta name="description" content="Flutter developer at Bapenda Jabar who builds on-device license-plate recognition. Portfolio in English, Indonesian and Japanese.">
+<meta property="og:title" content="Arsenius Purbandono: Mobile Dev × On-device AI">
+<meta property="og:description" content="Flutter apps for field officers + on-device ANPR. Custom OCR: 56% → 76% exact match.">
+<meta name="theme-color" content="#111111">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow+Condensed:wght@700;800&family=JetBrains+Mono:wght@400;700&family=Noto+Sans+JP:wght@400;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- status bar = site header -->
+<header class="statusbar" role="banner">
+  <div class="sb-left"><span class="rec">●</span> <span id="clock">BDG --:-- WIB</span></div>
+  <a class="sb-logo plate plate-sm" href="#home" aria-label="Home">AP·2023</a>
+  <div class="sb-right">
+    <div class="langs" role="group" aria-label="Language">
+      <button data-lang="en">EN</button><button data-lang="id">ID</button><button data-lang="ja">日本</button>
+    </div>
+    <a class="pdf-btn" id="pdfTop" download><span data-i18n="pdf">PDF</span> ↓</a>
+    <span class="battery" title="OCR exact match">76%<i></i></span>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-copy">
+      <p class="kicker mono" data-i18n="hero.kicker"></p>
+      <h1 class="name">
+        <span class="plate plate-xl det" data-label="flutter_dev 0.98">ARSENIUS</span>
+        <span class="plate plate-xl plate-y det" data-label="ai_engineer 0.91">PURBANDONO</span>
+      </h1>
+      <p class="lead" data-i18n="hero.lead"></p>
+      <p class="where mono" data-i18n="hero.where"></p>
+      <p class="print-only mono">xzars009@gmail.com · linkedin.com/in/arsenius-purbandono-a05a65212 · github.com/xzars-git · arsenius-portfolio.vercel.app</p>
+      <div class="ctas">
+        <a class="btn btn-y" href="#apps" data-i18n="hero.cta1"></a>
+        <a class="btn" id="pdfHero" download data-i18n="hero.cta2"></a>
+      </div>
+    </div>
+
+    <div class="phone" aria-hidden="true">
+      <div class="phone-notch"></div>
+      <div class="vf">
+        <div class="vf-street"></div>
+        <div class="vf-car">
+          <div class="vf-plate"><span>D 2023 AI</span><small>11·27</small></div>
+          <div class="vf-box"><b>plate 0.97</b></div>
+        </div>
+        <div class="vf-scan"></div>
+        <div class="vf-corners"></div>
+        <div class="vf-tag mono"><span class="blink">●</span> <span data-i18n="phone.scan"></span></div>
+      </div>
+      <div class="sheet mono">
+        <div class="sheet-row"><span data-i18n="phone.read"></span><b id="ocrOut">_</b></div>
+        <div class="sheet-row small"><span data-i18n="phone.color"></span><span>conf 0.97</span></div>
+        <div class="sheet-ok" data-i18n="phone.ok"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true"><div class="marquee-track mono">FLUTTER ✦ DART ✦ YOLO ✦ TFLITE ✦ PYTORCH ✦ TENSORFLOW ✦ KERAS ✦ ONNX ✦ OPENCV ✦ KOTLIN ✦ SHOREBIRD ✦ FIREBASE ✦ HIVE ✦ BLOC ✦ CLEAN ARCHITECTURE ✦ CNN+CTC ✦ MOBILENETV2 ✦&nbsp;</div></div>
+
+  <!-- STATS -->
+  <section class="block">
+    <h2 class="h2"><span data-i18n="stats.title"></span></h2>
+    <div class="stats">
+      <div class="stat det" data-label="years 1.00"><b>3+</b><span data-i18n="stats.1"></span></div>
+      <div class="stat stat-y det" data-label="accuracy 0.76"><b>56→76%</b><span data-i18n="stats.2"></span></div>
+      <div class="stat det" data-label="apk_size 0.99"><b>−30MB</b><span data-i18n="stats.3"></span></div>
+      <div class="stat det" data-label="speedup 0.95"><b>4×</b><span data-i18n="stats.4"></span></div>
+      <div class="stat stat-k det" data-label="params 0.93"><b>1.1M</b><span data-i18n="stats.5"></span></div>
+      <div class="stat det" data-label="test_set 1.00"><b>494</b><span data-i18n="stats.6"></span></div>
+    </div>
+  </section>
+
+  <!-- PIPELINE -->
+  <section class="block block-k">
+    <h2 class="h2 h2-y" data-i18n="pipe.title"></h2>
+    <p class="sub" data-i18n="pipe.sub"></p>
+    <ol class="pipe">
+      <li><i>01</i><b data-i18n="pipe.1t"></b><span data-i18n="pipe.1d"></span></li>
+      <li><i>02</i><b data-i18n="pipe.2t"></b><span data-i18n="pipe.2d"></span></li>
+      <li><i>03</i><b data-i18n="pipe.3t"></b><span data-i18n="pipe.3d"></span></li>
+      <li><i>04</i><b data-i18n="pipe.4t"></b><span data-i18n="pipe.4d"></span></li>
+      <li class="hot"><i>05</i><b data-i18n="pipe.5t"></b><span data-i18n="pipe.5d"></span></li>
+      <li><i>06</i><b data-i18n="pipe.6t"></b><span data-i18n="pipe.6d"></span></li>
+    </ol>
+  </section>
+
+  <!-- APPS -->
+  <section id="apps" class="block">
+    <h2 class="h2" data-i18n="apps.title"></h2>
+    <p class="sub" data-i18n="apps.sub"></p>
+    <div class="home">
+      <div class="home-bar mono"><span>ARSEN·OS</span><span>▂▄▆█ 5G</span></div>
+      <div class="icons" id="icons"></div>
+      <div class="dock"><span></span><span></span><span></span></div>
+    </div>
+    <!-- print-only expanded list -->
+    <div class="print-apps" id="printApps"></div>
+  </section>
+
+  <!-- LAB -->
+  <section id="lab" class="block block-y">
+    <h2 class="h2" data-i18n="lab.title"></h2>
+    <p class="sub" data-i18n="lab.sub"></p>
+    <div class="lab">
+      <article class="story">
+        <h3 data-i18n="lab.story.t"></h3>
+        <div class="vs">
+          <div class="vs-a"><small>Google ML Kit</small><b>56%</b><div class="bar"><i style="width:56%"></i></div></div>
+          <div class="vs-b"><small>CNN+CTC (mine)</small><b>76%</b><div class="bar"><i style="width:76%"></i></div></div>
+        </div>
+        <p data-i18n="lab.story.p1"></p>
+        <p data-i18n="lab.story.p2"></p>
+        <p data-i18n="lab.story.p3"></p>
+      </article>
+      <div class="models" id="models"></div>
+    </div>
+    <h3 class="h3"><span data-i18n="lab.sandbox"></span></h3>
+    <p class="sub" data-i18n="lab.sandbox.sub"></p>
+    <div class="sandbox" id="sandbox"></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="block">
+    <h2 class="h2" data-i18n="about.title"></h2>
+    <div class="about">
+      <div class="log mono">
+        <h3 data-i18n="about.exp"></h3>
+        <div class="commit">
+          <div class="c-head"><span class="hash">a76c0de</span> <b data-i18n="about.job1"></b> <span class="c-tag">HEAD</span></div>
+          <div class="c-meta"><span data-i18n="about.org1"></span> · <span data-i18n="about.when1"></span></div>
+          <p data-i18n="about.job1d"></p>
+        </div>
+        <div class="commit">
+          <div class="c-head"><span class="hash">5a1e922</span> <b data-i18n="about.job2"></b></div>
+          <div class="c-meta"><span data-i18n="about.org2"></span> · <span data-i18n="about.when2"></span></div>
+          <p data-i18n="about.job2d"></p>
+        </div>
+        <h3 data-i18n="about.edu"></h3>
+        <p data-i18n="about.edu1"></p>
+      </div>
+      <div class="side">
+        <div class="card">
+          <h3 data-i18n="about.cert"></h3>
+          <ul>
+            <li><b>BNSP Senior Mobile Programmer</b> · 2025-11</li>
+            <li><b>BNSP Junior Mobile Programmer</b> · 2025-08</li>
+            <li><b>EF SET English B2</b> (54/100) · 2024-06</li>
+            <li>MSIB Mobile &amp; Cloud Dev, Nongsa Digital Park · 2022</li>
+            <li>MSIB Game Development, Agate · 2021–22</li>
+          </ul>
+        </div>
+        <div class="card card-y">
+          <h3 data-i18n="about.lang"></h3>
+          <ul><li data-i18n="about.ja"></li><li data-i18n="about.en"></li><li data-i18n="about.id"></li></ul>
+        </div>
+        <p class="avail" data-i18n="about.avail"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="block block-k contact">
+    <h2 class="h2 h2-y" data-i18n="contact.title"></h2>
+    <p class="sub" data-i18n="contact.sub"></p>
+    <a class="plate plate-xl mail det" data-label="email 1.00" href="mailto:xzars009@gmail.com">xzars009@gmail.com</a>
+    <div class="links mono">
+      <a href="https://www.linkedin.com/in/arsenius-purbandono-a05a65212/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://github.com/xzars-git" target="_blank" rel="noopener">GitHub ↗</a>
+      <a id="pdfFoot" download>PDF ↓</a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot mono">
+  <p data-i18n="foot.ip"></p>
+  <p data-i18n="foot.ja"></p>
+  <p>© 2026 Arsenius Purbandono</p>
+</footer>
+
+<!-- app "window" -->
+<div class="appwin" id="appwin" hidden>
+  <div class="appwin-screen" role="dialog" aria-modal="true" aria-labelledby="awTitle">
+    <div class="aw-bar" id="awBar"><span class="mono" id="awStatus"></span><button id="awClose" class="mono">✕ <span data-i18n="apps.close"></span></button></div>
+    <div class="aw-body">
+      <div class="aw-icon" id="awIcon"></div>
+      <h3 id="awTitle"></h3>
+      <p id="awWhat"></p>
+      <h4 class="mono" data-i18n="apps.role"></h4>
+      <ul id="awRole"></ul>
+      <h4 class="mono" data-i18n="apps.stack"></h4>
+      <div class="chips" id="awStack"></div>
+    </div>
+    <div class="aw-home"></div>
+  </div>
+</div>
+
+<!-- mobile bottom nav -->
+<nav class="bottomnav mono" aria-label="Sections">
+  <a href="#home"><i>⌂</i><span data-i18n="nav.home"></span></a>
+  <a href="#apps"><i>▦</i><span data-i18n="nav.apps"></span></a>
+  <a href="#lab"><i>◎</i><span data-i18n="nav.lab"></span></a>
+  <a href="#about"><i>≡</i><span data-i18n="nav.about"></span></a>
+  <a href="#contact"><i>✉</i><span data-i18n="nav.contact"></span></a>
+</nav>
+
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
