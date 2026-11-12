@@ -130,6 +130,8 @@
         <div class="name"><span class="plate plate-xl">ARSENIUS</span><span class="plate plate-xl plate-y">PURBANDONO</span></div>
         <p class="lead">${esc(t("hero.lead"))}</p><p class="where mono">${esc(t("hero.where"))}</p></div>
       <div class="sl-photo"><img src="me.jpg" alt=""><i><b>${esc(t("phone.box"))}</b></i></div></div>`,
+    mobile: () => `<div class="sl sl-k"><h2 class="h2 h2-y">${esc(t("mob.title"))}</h2><p class="sub">${esc(t("mob.sub"))}</p><div class="mob">
+      ${[1, 2, 3, 4, 5, 6].map(i => `<div class="mob-card"><i class="mono">${esc(t(`mob.${i}k`))}</i><h3>${esc(t(`mob.${i}t`))}</h3><p>${esc(t(`mob.${i}d`))}</p></div>`).join("")}</div></div>`,
     stats: () => `<div class="sl"><h2 class="h2">${esc(t("stats.title"))}</h2><div class="stats">
       ${[["3+", 1], ["56→76%", 2], ["−30MB", 3], ["4×", 4], ["1.1M", 5], ["494", 6]].map(([n, i]) =>
         `<div class="stat ${i === 2 ? "stat-y" : i === 5 ? "stat-k" : ""}"><b>${n}</b><span>${esc(t("stats." + i))}</span></div>`).join("")}</div></div>`,
@@ -156,7 +158,7 @@
   };
 
   function buildSlides() {
-    slides = [S.title(), S.log(STORY.slice(0, 6)), S.log(STORY.slice(6, 10)), S.log(STORY.slice(10)), S.stats(), S.pipe(), ...APPS.map(S.app), S.story(), S.models(), S.sandbox(), S.end()];
+    slides = [S.title(), S.log(STORY.slice(0, 6)), S.log(STORY.slice(6, 10)), S.log(STORY.slice(10)), S.mobile(), S.stats(), S.pipe(), ...APPS.map(S.app), S.story(), S.models(), S.sandbox(), S.end()];
     stage.innerHTML = slides.map((h, i) => `<section class="slide" data-n="${i}" aria-hidden="true">${h}</section>`).join("");
     $("#deckHint").textContent = t("sl.hint");
     go(Math.min(cur, slides.length - 1));
