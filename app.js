@@ -55,6 +55,20 @@
   }
   document.querySelectorAll("[data-lang]").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
 
+  // ---------- visitor counter (abacus: free, no account). counts once per browser, never from localhost or PDF builds ----------
+  (() => {
+    const local = /^(localhost|127\.|\[::1\])/.test(location.hostname);
+    if (params.has("pdf")) return;
+    let seen = true; try { seen = !!localStorage.getItem("seen"); } catch {}
+    const op = local || seen ? "get" : "hit";
+    fetch(`https://abacus.jasoncameron.dev/${op}/arsenius-portfolio/visits`).then(r => r.ok ? r.json() : null).then(d => {
+      if (!d || !(d.value > 0)) return;
+      if (op === "hit") try { localStorage.setItem("seen", "1"); } catch {}
+      $("#viewsN").textContent = d.value.toLocaleString("en-US");
+      $("#views").hidden = false;
+    }).catch(() => {});
+  })();
+
   // ---------- app window ----------
   const win = $("#appwin");
   let lastIcon = null;
