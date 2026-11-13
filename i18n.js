@@ -1,7 +1,7 @@
 // All copy lives here. Keys are referenced by data-i18n in index.html and by app.js.
 window.I18N = {
   en: {
-    "meta.title": "Arsenius Purbandono · Flutter dev who taught phones to read plates",
+    "meta.title": "Arsenius Purbandono · Mobile dev who taught phones to read plates",
     "nav.home": "Home", "nav.apps": "Apps", "nav.lab": "Lab", "nav.about": "Story", "nav.contact": "Contact",
     "pdf": "PDF", "slides.open": "Slideshow",
     "hero.kicker": "MOBILE DEV · AI THAT RUNS ON THE PHONE",
@@ -63,7 +63,7 @@ window.I18N = {
   },
 
   id: {
-    "meta.title": "Arsenius Purbandono · Flutter dev yang ngajarin HP baca plat",
+    "meta.title": "Arsenius Purbandono · Mobile dev yang ngajarin HP baca plat",
     "nav.home": "Home", "nav.apps": "Aplikasi", "nav.lab": "Lab", "nav.about": "Cerita", "nav.contact": "Kontak",
     "pdf": "PDF", "slides.open": "Slideshow",
     "hero.kicker": "MOBILE DEV · AI-NYA JALAN DI HP",
@@ -125,7 +125,7 @@ window.I18N = {
   },
 
   ja: {
-    "meta.title": "アルセニウス・プルバンドノ｜Flutter開発とオンデバイスAI",
+    "meta.title": "アルセニウス・プルバンドノ｜モバイル開発とオンデバイスAI",
     "nav.home": "ホーム", "nav.apps": "アプリ", "nav.lab": "ラボ", "nav.about": "経歴", "nav.contact": "連絡先",
     "pdf": "PDF", "slides.open": "スライド",
     "hero.kicker": "モバイル開発 · スマホで動くAI",
