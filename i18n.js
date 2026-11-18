@@ -321,9 +321,9 @@ window.STORY = [
   { hash: "a76c0de", logo: "logos/org/bapenda.png", tag: "work", en: { when: "Feb 2023", t: "Mobile Application Developer · Bapenda Jabar", d: "Joined West Java's revenue agency as a mobile app developer, building the apps above. Still here." },
     id: { when: "Feb 2023", t: "Mobile Application Developer · Bapenda Jabar", d: "Masuk Bapenda Jawa Barat jadi mobile app developer, ngerjain aplikasi-aplikasi di atas. Sampe sekarang masih di sini." },
     ja: { when: "2023年2月", t: "モバイルアプリ開発者・西ジャワ州歳入庁", d: "モバイルアプリ開発者として入庁し、上のアプリを担当。現在も在籍。" } },
-  { hash: "c9f1d04", tag: "work", en: { when: "Oct – Dec 2024", t: "Community Manager · Web3 Developer Indonesia", d: "Ran the community side for a developer group, next to the day job." },
-    id: { when: "Okt – Des 2024", t: "Community Manager · Web3 Developer Indonesia", d: "Ngurus komunitas developer, nyambi di luar kerjaan utama." },
-    ja: { when: "2024年10月〜12月", t: "コミュニティマネージャー・Web3 Developer Indonesia", d: "本業と並行して開発者コミュニティを運営。" } },
+  { hash: "c9f1d04", tag: "hobby", en: { when: "Oct – Dec 2024", t: "Community Manager · Web3 Developer Indonesia", d: "Ran a developer community as a hobby, outside my day job." },
+    id: { when: "Okt – Des 2024", t: "Community Manager · Web3 Developer Indonesia", d: "Ngurus komunitas developer buat hobi, di luar kerjaan utama." },
+    ja: { when: "2024年10月〜12月", t: "コミュニティマネージャー・Web3 Developer Indonesia", d: "趣味として、本業の外で開発者コミュニティを運営。" } },
   { hash: "HEAD", tag: "now", en: { when: "now", t: "Learning Japanese, heading to Japan", d: "Working through Minna no Nihongo toward JLPT N3." },
     id: { when: "sekarang", t: "Belajar Jepang, otw Jepang", d: "Lagi ngulik Minna no Nihongo, target JLPT N3." },
     ja: { when: "現在", t: "日本語を勉強中、日本へ", d: "『みんなの日本語』でJLPT N3を目指して勉強中。" } }
