@@ -510,3 +510,10 @@ html[lang=ja] .mob-card h3{font-weight:900}
 .hbadge.hb-y{background:var(--y);color:var(--k);transform:rotate(-1.5deg)}
 .sl .hero-badges{margin:6px 0 0;gap:16px}.sl .hbadge{font-size:24px;padding:10px 16px}
 @media print{.hbadge{box-shadow:none;transform:none!important}}
+@media (min-width:768px){
+  .appwin-screen{display:flex;flex-direction:column;height:min(820px,92vh)}
+  .aw-body{flex:1;min-height:0;grid-template-rows:auto auto minmax(150px,1fr)}
+  .aw-shots{flex-wrap:nowrap;min-height:0;padding:0 0 4px}
+  .aw-shots a{flex:0 1 auto;min-width:0;max-width:none;height:100%}
+  .aw-shots img{height:100%;width:auto;max-width:100%;object-fit:contain}
+}
