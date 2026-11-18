@@ -1,10 +1,10 @@
 // All copy lives here. Keys are referenced by data-i18n in index.html and by app.js.
 window.I18N = {
   en: {
-    "meta.title": "Arsenius Purbandono · Mobile dev who taught phones to read plates",
+    "meta.title": "Arsenius Purbandono · Flutter mobile dev who taught phones to read plates",
     "nav.home": "Home", "nav.apps": "Apps", "nav.lab": "Lab", "nav.about": "Story", "nav.contact": "Contact",
     "pdf": "PDF", "slides.open": "Slideshow",
-    "hero.kicker": "MOBILE DEV · AI THAT RUNS ON THE PHONE",
+    "hero.kicker": "FLUTTER MOBILE DEV · AI THAT RUNS ON THE PHONE",
     "hero.lead": "I build apps for tax officers in West Java. Lately I've been teaching those apps to read license plates on the phone itself, no internet needed.",
     "hero.where": "Bandung, Indonesia · West Java Revenue Agency (Bapenda Jabar) · since Feb 2023",
     "hero.cta1": "See the apps", "hero.cta2": "Download PDF", "hero.cta3": "▶ Play as slides",
@@ -47,6 +47,7 @@ window.I18N = {
     "about.title": "HOW I GOT HERE", "about.sub": "git log --reverse arsenius. Oldest first.", "contact.cv": "Download my CV", "contact.copy": "Click to copy", "contact.copied": "Copied ✓", "clock.city": "Bandung",
     "about.lang": "Languages",
     "about.cert": "Certificates", "about.lang": "Languages",
+    "about.bnsp": "BNSP is Indonesia's national professional certification agency, run by the government.",
     "about.en": "English: B2 (EF SET 54/100)",
     "about.ja": "Japanese: beginner. Working through Minna no Nihongo, aiming for JLPT N3",
     "about.id": "Indonesian: native",
@@ -63,10 +64,10 @@ window.I18N = {
   },
 
   id: {
-    "meta.title": "Arsenius Purbandono · Mobile dev yang ngajarin HP baca plat",
+    "meta.title": "Arsenius Purbandono · Flutter mobile dev yang ngajarin HP baca plat",
     "nav.home": "Home", "nav.apps": "Aplikasi", "nav.lab": "Lab", "nav.about": "Cerita", "nav.contact": "Kontak",
     "pdf": "PDF", "slides.open": "Slideshow",
-    "hero.kicker": "MOBILE DEV · AI-NYA JALAN DI HP",
+    "hero.kicker": "FLUTTER MOBILE DEV · AI-NYA JALAN DI HP",
     "hero.lead": "Gue bikin aplikasi buat petugas pajak di Jabar. Belakangan gue ngajarin aplikasinya baca plat nomor langsung di HP, gak perlu internet.",
     "hero.where": "Bandung · Bapenda Jabar · dari Feb 2023",
     "hero.cta1": "Lihat aplikasinya", "hero.cta2": "Download PDF", "hero.cta3": "▶ Puter jadi slide",
@@ -109,6 +110,7 @@ window.I18N = {
     "about.title": "PERJALANAN GUE", "about.sub": "git log --reverse arsenius. Dari yang paling lama.", "contact.cv": "Download CV gue", "contact.copy": "Klik buat copy", "contact.copied": "Udah ke-copy ✓", "clock.city": "Bandung",
     "about.lang": "Bahasa",
     "about.cert": "Sertifikat", "about.lang": "Bahasa",
+    "about.bnsp": "BNSP = Badan Nasional Sertifikasi Profesi, lembaga sertifikasi profesi resmi dari pemerintah.",
     "about.en": "Inggris: B2 (EF SET 54/100)",
     "about.ja": "Jepang: masih pemula, lagi ngulik Minna no Nihongo, target JLPT N3",
     "about.id": "Indonesia: bahasa ibu",
@@ -125,10 +127,10 @@ window.I18N = {
   },
 
   ja: {
-    "meta.title": "アルセニウス・プルバンドノ｜モバイル開発とオンデバイスAI",
+    "meta.title": "アルセニウス・プルバンドノ｜Flutterモバイル開発とオンデバイスAI",
     "nav.home": "ホーム", "nav.apps": "アプリ", "nav.lab": "ラボ", "nav.about": "経歴", "nav.contact": "連絡先",
     "pdf": "PDF", "slides.open": "スライド",
-    "hero.kicker": "モバイル開発 · スマホで動くAI",
+    "hero.kicker": "Flutterモバイル開発 · スマホで動くAI",
     "hero.lead": "西ジャワ州の税務職員が使うアプリを開発しています。最近は、そのアプリがスマホだけでナンバープレートを読めるようにしました。通信は不要です。",
     "hero.where": "インドネシア・バンドン｜西ジャワ州歳入庁｜2023年2月〜",
     "hero.cta1": "アプリを見る", "hero.cta2": "PDFをダウンロード", "hero.cta3": "▶ スライドで見る",
@@ -171,6 +173,7 @@ window.I18N = {
     "about.title": "これまでの歩み", "about.sub": "git log --reverse arsenius。古い順に並べています。", "contact.cv": "履歴書・職務経歴書のダウンロード", "contact.copy": "クリックでコピー", "contact.copied": "コピーしました ✓", "clock.city": "バンドン", "clock.jp": "日本",
     "about.lang": "語学",
     "about.cert": "資格", "about.lang": "語学",
+    "about.bnsp": "BNSP：インドネシア政府の国家職業資格認定機関です。",
     "about.en": "英語：B2（EF SET 54/100）",
     "about.ja": "日本語：初学者。『みんなの日本語』で勉強中、JLPT N3が目標",
     "about.id": "インドネシア語：母語",
