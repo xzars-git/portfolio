@@ -69,6 +69,19 @@
     }).catch(() => {});
   })();
 
+  // ---------- theme ----------
+  const mq = matchMedia("(prefers-color-scheme: dark)"), root = document.documentElement;
+  const isDark = () => root.dataset.theme ? root.dataset.theme === "dark" : mq.matches;
+  const paintTheme = () => { const d = isDark(); $("#themeBtn").textContent = d ? "☀" : "☾"; $("#themeBtn").setAttribute("aria-label", d ? "Light mode" : "Dark mode"); };
+  $("#themeBtn").addEventListener("click", () => {
+    const next = isDark() ? "light" : "dark";
+    if ((next === "dark") === mq.matches) { delete root.dataset.theme; try { localStorage.removeItem("theme"); } catch {} }
+    else { root.dataset.theme = next; try { localStorage.setItem("theme", next); } catch {} }
+    paintTheme();
+  });
+  mq.addEventListener("change", paintTheme);
+  paintTheme();
+
   // ---------- app window ----------
   const win = $("#appwin");
   let lastIcon = null;
@@ -82,6 +95,9 @@
     $("#awTitle").textContent = a.name;
     $("#awWhat").textContent = a[lang].what;
     $("#awRole").innerHTML = a[lang].role.map(r => `<li>${esc(r)}</li>`).join("");
+    const shots = a.shots || [];
+    $("#awShotsH").hidden = !shots.length;
+    $("#awShots").innerHTML = shots.map(src => `<a href="${src}" target="_blank" rel="noopener"><img src="${src}" alt="${esc(a.name)} screenshot" loading="lazy"></a>`).join("");
     $("#awStack").innerHTML = a.stack.map(s => `<span class="chip">${esc(s)}</span>`).join("");
     win.hidden = false; $("#awClose").focus();
   });

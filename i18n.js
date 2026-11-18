@@ -35,7 +35,7 @@ window.I18N = {
     "pipe.6t": "LOOKUP", "pipe.6d": "Number + color go to the vehicle tax lookup",
     "apps.title": "APPS I BUILT",
     "apps.sub": "Apps I build and maintain as the mobile (front-end) developer. Tap an icon.",
-    "apps.close": "Close", "apps.role": "What I did", "apps.stack": "Stack", "apps.ph": "placeholder icon",
+    "apps.close": "Close", "apps.role": "What I did", "apps.stack": "Stack", "apps.shots": "Screenshots", "apps.ph": "placeholder icon",
     "lab.title": "MODEL LAB",
     "lab.sub": "The plate-recognition repo: data, labels, training.",
     "lab.story.t": "WHY I DROPPED GOOGLE ML KIT",
@@ -99,7 +99,7 @@ window.I18N = {
     "pipe.6t": "CEK", "pipe.6d": "Nomor + warna langsung dicek ke data pajak",
     "apps.title": "APLIKASI YANG GUE BIKIN",
     "apps.sub": "Aplikasi yang gue bikin dan rawat sebagai mobile developer (front end). Tap aja ikonnya.",
-    "apps.close": "Tutup", "apps.role": "Bagian gue", "apps.stack": "Stack", "apps.ph": "ikon sementara",
+    "apps.close": "Tutup", "apps.role": "Bagian gue", "apps.stack": "Stack", "apps.shots": "Tangkapan layar", "apps.ph": "ikon sementara",
     "lab.title": "LAB MODEL",
     "lab.sub": "Isi repo plate-recognition: data, labeling, training.",
     "lab.story.t": "KENAPA GUE BUANG GOOGLE ML KIT",
@@ -163,7 +163,7 @@ window.I18N = {
     "pipe.6t": "照会", "pipe.6d": "番号と色で車両税を照会",
     "apps.title": "開発したアプリ",
     "apps.sub": "モバイル（フロントエンド）担当として開発・保守しているアプリです。アイコンをタップしてください。",
-    "apps.close": "閉じる", "apps.role": "担当したこと", "apps.stack": "技術", "apps.ph": "仮のアイコン",
+    "apps.close": "閉じる", "apps.role": "担当したこと", "apps.stack": "技術", "apps.shots": "スクリーンショット", "apps.ph": "仮のアイコン",
     "lab.title": "モデルラボ",
     "lab.sub": "plate-recognitionリポジトリの中身：データ、ラベル付け、学習。",
     "lab.story.t": "Google ML Kitをやめた理由",
@@ -196,7 +196,7 @@ window.I18N = {
 // Apps on the "home screen". logo: real launcher icon (png) or placeholder (svg, ph:true).
 window.APPS = [
   {
-    id: "pp", name: "Panah Pasopati", abbr: "PP", color: "#118C5B", ink: "#fff", status: "prod", logo: "logos/pp.png",
+    id: "pp", shots: ["shots/pp-1.webp", "shots/pp-2.webp", "shots/pp-3.webp", "shots/pp-4.webp"], name: "Panah Pasopati", abbr: "PP", color: "#118C5B", ink: "#fff", status: "prod", logo: "logos/pp.png",
     stack: ["Flutter", "TFLite", "YOLO", "Shorebird", "Firebase", "Kotlin"],
     en: { what: "Officers point the camera at a plate and get the vehicle's tax record. Used in the field across West Java.",
       role: ["Built the plate-recognition module (Teman Pamor): detection, color, OCR, all on the phone", "Patched the Android camera plugin in Kotlin so the camera stops restarting 3–4 times", "Locked down OTA updates: HTTPS only, newer versions only, SHA-256 check", "Field rules: officers must be inside a location radius, a warning if the car was already traced, an owner-info form, and data scoped to each role's region", "Token refresh and forced logout when a session dies, plus a tracing report with a date filter", "Unit and widget tests for the plate OCR, role guard and update policy"] },
@@ -206,7 +206,7 @@ window.APPS = [
       role: ["プレート認識モジュール（Teman Pamor）を開発：検出・色・OCRをすべてスマホ上で", "AndroidカメラプラグインをKotlinで修正し、カメラが3〜4回再起動する問題を解消", "OTA更新を強化：HTTPSのみ、新しい版のみ、SHA-256で確認", "現場ルール：位置の半径チェック、照会済み車両の警告、所有者情報フォーム、ロールごとの地域でデータを制限", "トークン更新とセッション切れ時の強制ログアウト、日付で絞り込める照会レポート", "プレートOCR、ロールガード、更新ポリシーのユニット／ウィジェットテスト"] }
   },
   {
-    id: "atos", name: "ATOS PAMOR", abbr: "AP", color: "#fff", ink: "#111", status: "prod", logo: "logos/atos.svg",
+    id: "atos", shots: ["shots/atos-1.webp"], name: "ATOS PAMOR", abbr: "AP", color: "#fff", ink: "#111", status: "prod", logo: "logos/atos.svg",
     stack: ["Flutter", "MVC", "Dio", "Hive", "flutter_map", "Geolocator", "OTA"],
     en: { what: "A fuller tracing app for the special field team: data checks, vehicle history and the paperwork for collecting overdue tax.",
       role: ["Photo evidence gets a watermark with officer ID, GPS and the street address", "Every controller handles errors the same way now, and users see the real backend message", "Moved the app to a new major Flutter and Dart version", "Gallery photos lost GPS in the watermark (Android 10+ strips it). Shipped a fix that works as a Shorebird patch, and wrote down the full fix for the next APK", "Wrote the API integration and testing/debugging documents for ATOS PAMOR and Panah Pasopati"] },
@@ -216,7 +216,7 @@ window.APPS = [
       role: ["証拠写真に職員ID・GPS・住所の透かしを入れる", "全コントローラーのエラー処理をそろえ、バックエンドの実際のメッセージを表示", "Flutter／Dartの新しいメジャーバージョンへ移行", "ギャラリー写真の透かしから位置情報が消える問題（Android 10以降がGPSを削除）を、Shorebirdパッチで直せる形で修正し、次のAPK向けの完全な対策も文書化", "ATOS PAMORとPanah PasopatiのAPI連携資料とテスト・デバッグ資料を作成"] }
   },
   {
-    id: "sj", name: "SAKTI JAWARA", abbr: "SJ", color: "#FDE2E3", ink: "#111", status: "prod", logo: "logos/sj.svg",
+    id: "sj", shots: ["shots/sj-1.webp", "shots/sj-2.webp"], name: "SAKTI JAWARA", abbr: "SJ", color: "#FDE2E3", ink: "#111", status: "prod", logo: "logos/sj.svg",
     stack: ["Flutter", "Device SDK", "Thermal printer", "Excel/PDF"],
     en: { what: "The counter app at every Samsat office in West Java. It runs on cashier-style POS terminals, where officers take tax payments and change vehicle data.",
       role: ["Hooked up the device SDKs: camera, thermal printer, second screen", "Excel and PDF export", "Keyboard shortcuts, because counter staff hate reaching for the mouse"] },
@@ -226,7 +226,7 @@ window.APPS = [
       role: ["カメラ、サーマルプリンタ、セカンドスクリーンのSDKを連携", "ExcelとPDFの出力", "窓口の職員がマウスを使わずに済むキーボードショートカット"] }
   },
   {
-    id: "sm", name: "Sakti Mobile", abbr: "SM", color: "#ECECEC", ink: "#111", status: "prod", logo: "logos/sm.svg",
+    id: "sm", shots: ["shots/sm-1.webp", "shots/sm-2.webp"], name: "Sakti Mobile", abbr: "SM", color: "#ECECEC", ink: "#111", status: "prod", logo: "logos/sm.svg",
     stack: ["Flutter", "Camera", "Excel/PDF"],
     en: { what: "SAKTI JAWARA, on a phone. Verifiers use it to check payments and data changes.",
       role: ["Camera for evidence photos", "Local data storage", "Excel and PDF export"] },
@@ -236,7 +236,7 @@ window.APPS = [
       role: ["証拠写真のためのカメラ", "ローカルデータ保存", "ExcelとPDFの出力"] }
   },
   {
-    id: "sd", name: "Samsat Digital", abbr: "SD", color: "#DCE8FD", ink: "#111", status: "prod", logo: "logos/sd.svg",
+    id: "sd", shots: ["shots/sd-1.webp", "shots/sd-2.webp"], name: "Samsat Digital", abbr: "SD", color: "#DCE8FD", ink: "#111", status: "prod", logo: "logos/sd.svg",
     stack: ["Flutter", "Kiosk", "Device SDK"],
     en: { what: "SAKTI JAWARA on a big self-service kiosk at Samsat branches, where people pay vehicle tax on their own.",
       role: ["Connected the kiosk hardware: camera, printer and the rest", "Local data for each kiosk session"] },
@@ -246,7 +246,7 @@ window.APPS = [
       role: ["カメラやプリンタなどキオスク機器との連携", "利用ごとのローカルデータ管理"] }
   },
   {
-    id: "semar", name: "SEMAR", abbr: "SE", color: "#fff", ink: "#111", status: "prod", logo: "logos/semar.png",
+    id: "semar", shots: ["shots/semar-1.webp", "shots/semar-2.webp", "shots/semar-3.webp"], name: "SEMAR", abbr: "SE", color: "#fff", ink: "#111", status: "prod", logo: "logos/semar.png",
     stack: ["Flutter", "Android + Web", "Multi-package", "Hive"],
     en: { what: "Water tax. Officers visit taxpayer companies and record their water-meter readings, then a verifier accepts or rejects each one.",
       role: ["Split into packages: recording, verification and the two histories", "One codebase for Android and the web. Detail pages load by the ID in the URL, so refreshing the browser doesn't break them", "Menus by role (recorder, verifier, admin). Other roles are turned away at login", "Second evidence photo and notes on each reading, an update check, Shorebird patches, a server switcher and a debug logger", "Tests for role checks and verification, plus a GitHub Actions pipeline that builds the Flutter web app and deploys it to Vercel"] },

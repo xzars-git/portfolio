@@ -13,6 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow+Condensed:wght@700;800&family=JetBrains+Mono:wght@400;700&family=Noto+Sans+JP:wght@400;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script>try{const t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch{}</script>
 </head>
 <body>
 
@@ -24,6 +25,7 @@
     <div class="langs" role="group" aria-label="Language">
       <button data-lang="en">EN</button><button data-lang="id">ID</button><button data-lang="ja">日本</button>
     </div>
+    <button class="theme-btn" id="themeBtn" type="button"></button>
     <button class="slides-btn" data-slides aria-label="Slideshow">▶ <span data-i18n="slides.open">Slideshow</span></button>
     <a class="pdf-btn" id="pdfTop" download><span data-i18n="pdf">PDF</span> ↓</a>
     <span class="battery" title="OCR exact match">76%<i></i></span>
@@ -234,6 +236,8 @@
       <div class="aw-r">
         <h4 class="mono" data-i18n="apps.role"></h4>
         <ul id="awRole"></ul>
+        <h4 class="mono" id="awShotsH" data-i18n="apps.shots"></h4>
+        <div class="aw-shots" id="awShots"></div>
       </div>
     </div>
     <div class="aw-home"></div>
