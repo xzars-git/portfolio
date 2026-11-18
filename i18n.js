@@ -256,7 +256,7 @@ window.APPS = [
       role: ["記録・検証・2つの履歴をパッケージに分割", "AndroidとWebを1つのコードで。詳細画面はURLのIDからデータを読み込むので、再読み込みしても壊れない", "ロール別メニュー（記録・検証・管理）。それ以外のロールはログイン時に拒否", "2枚目の証拠写真とメモ、更新チェック、Shorebirdパッチ、サーバー切替、デバッグロガー", "ロール確認と検証のテスト、Flutter WebをビルドしてVercelにデプロイするGitHub Actionsのパイプライン"] }
   },
   {
-    id: "pab", name: "Pajak Alat Berat", abbr: "AB", color: "#fff", ink: "#111", status: "prod", logo: "logos/pab.svg",
+    id: "pab", shots: ["shots/pab-1.webp", "shots/pab-2.webp", "shots/pab-3.webp"], name: "Pajak Alat Berat", abbr: "AB", color: "#fff", ink: "#111", status: "prod", logo: "logos/pab.svg",
     stack: ["Flutter", "BLoC", "Provider"],
     en: { what: "Tax app for heavy equipment like excavators and cranes: recording and tracing.",
       role: ["Features and maintenance in a BLoC + Provider codebase"] },
