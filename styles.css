@@ -84,7 +84,7 @@ img{max-width:100%}
 .sheet-row b{font:800 24px/1.1 var(--plate);letter-spacing:.03em;min-height:27px;white-space:nowrap}
 .sheet-row>span{white-space:nowrap}
 .sheet-row.small{opacity:.6;font-size:11px;margin-top:2px}
-.sheet-ok{margin-top:10px;background:var(--y);font-weight:700;text-align:center;padding:6px;letter-spacing:.1em;opacity:0;transition:opacity .2s}
+.sheet-ok{margin-top:10px;background:var(--y);color:var(--k);font-weight:700;text-align:center;padding:6px;letter-spacing:.1em;opacity:0;transition:opacity .2s}
 .sheet-ok.on{opacity:1}
 
 @keyframes scan{0%{top:14%;opacity:0}10%{opacity:1}45%{opacity:1}50%{top:86%;opacity:0}55%{opacity:1}90%{opacity:1}100%{top:14%;opacity:0}}
@@ -198,7 +198,7 @@ img{max-width:100%}
 .contact{text-align:left}
 #clock span+span::before{content:" · "}
 .mail-btn{cursor:pointer}
-.c-kind{opacity:.6;font-size:11px}
+.c-kind{opacity:1;font-size:11px}
 .mail{text-transform:none;font-size:clamp(28px,6vw,84px);transform:rotate(-2deg);margin:10px 0 40px;word-break:break-all}
 .links{display:flex;flex-wrap:wrap;gap:16px}
 .links a{color:var(--w);text-decoration:none;border:3px solid var(--w);padding:10px 16px;font-weight:700;cursor:pointer}
@@ -241,7 +241,7 @@ img{max-width:100%}
 .sl-photo{position:relative;border:6px solid var(--k);box-shadow:16px 16px 0 var(--r);transform:rotate(3deg);aspect-ratio:3/4;overflow:hidden}
 .sl-photo img{width:100%;height:100%;object-fit:cover;display:block}
 .sl-photo i{position:absolute;left:28%;top:17%;width:44%;height:31%;border:5px solid var(--lime)}
-.sl-photo b{position:absolute;top:-36px;left:-5px;background:var(--lime);font:700 20px/1 var(--mono);padding:7px 9px;white-space:nowrap}
+.sl-photo b{position:absolute;top:-36px;left:-5px;background:var(--lime);color:var(--k);font:700 20px/1 var(--mono);padding:7px 9px;white-space:nowrap}
 .sl-app{display:grid;grid-template-columns:360px 1fr;gap:80px;align-items:center}
 .sl-icon{display:block;width:360px;aspect-ratio:1;border-radius:28%;border:6px solid var(--k);box-shadow:16px 16px 0 var(--k);transform:rotate(-5deg)}
 .sl-app-l small{display:block;margin-top:34px;font-size:18px;opacity:.6}
@@ -382,7 +382,7 @@ body:has(.appwin:not([hidden])),body:has(.deck:not([hidden])){overflow:hidden}
 .case-mark[data-label=""]::before{display:none}
 .daily-act{display:flex;gap:12px;flex-wrap:wrap}
 .daily .btn:disabled{opacity:.5;cursor:wait}
-.qcard{margin-top:26px;max-width:640px;background:var(--paper);color:var(--k);border:var(--b);border-top:14px solid var(--rc);padding:18px 22px 24px;transform:rotate(-1deg)}
+.qcard{margin-top:26px;max-width:640px;background:var(--paper);color:var(--ink);border:var(--b);border-top:14px solid var(--rc);padding:18px 22px 24px;transform:rotate(-1deg)}
 .q-top{display:flex;justify-content:space-between;font-size:12px;font-weight:700;text-transform:uppercase}
 .q-text{font:400 clamp(24px,3.4vw,38px)/1.15 var(--disp);margin:14px 0 0}
 @media print{.daily{display:none!important}}
@@ -410,7 +410,7 @@ html[lang=ja] .mob-card h3{font-weight:900}
 .c-logo{color:var(--k);display:inline-flex;align-items:center;justify-content:center;height:30px;min-width:30px;padding:2px 6px;margin-right:8px;vertical-align:middle;
   background:#fff;border:2px solid var(--k);box-shadow:2px 2px 0 var(--k);transform:rotate(-2deg)}
 .c-logo img{height:22px;width:auto;display:block}
-.c-ini{background:var(--y);font:800 12px/1 var(--mono);letter-spacing:.04em}
+.c-ini{background:var(--y);color:var(--k);font:800 12px/1 var(--mono);letter-spacing:.04em}
 .sl .c-logo{height:40px;min-width:40px}.sl .c-logo img{height:30px}.sl .c-ini{font-size:15px}
 
 /* ---------- app window v2: fits without scrolling ---------- */
@@ -458,7 +458,7 @@ html[lang=ja] .mob-card h3{font-weight:900}
 @media print{#about .log{grid-template-columns:1fr 1fr 1fr;gap:6px}#about .commit{box-shadow:none;transform:none;padding:6px 8px}#about .commit p,#about .c-head{font-size:8pt}}
 
 /* ---------- contact form ---------- */
-.cform{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px;max-width:760px;margin:10px 0 34px;background:var(--paper);color:var(--k);
+.cform{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px;max-width:760px;margin:10px 0 34px;background:var(--paper);color:var(--ink);
   border:4px solid var(--w);padding:20px;transform:rotate(-1deg);box-shadow:8px 8px 0 var(--y)}
 .cform label{display:flex;flex-direction:column;gap:6px;font:700 12px var(--mono);text-transform:uppercase;letter-spacing:.06em}
 .cform .full{grid-column:1/-1}
@@ -552,3 +552,4 @@ html[lang=ja] .mob-card h3{font-weight:900}
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]) .block-y :is(.story,.model,.sand){background:#2A2216;color:#F4EBD6}:root:not([data-theme=light]) .block-y .model .metric{background:var(--y);color:#2A2216}:root:not([data-theme=light]) .block-y .sand .metric{color:var(--y)}}
 :root[data-theme=dark] .block-y :is(.story,.model,.sand){background:#2A2216;color:#F4EBD6}:root[data-theme=dark] .block-y .model .metric{background:var(--y);color:#2A2216}:root[data-theme=dark] .block-y .sand .metric{color:var(--y)}
 #about .commit:first-child .c-tag{background:var(--k);color:var(--lime)}
+.commit:first-child :is(.c-meta,.c-kind){opacity:1}
