@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # Regenerates pdf/*.pdf from the live page's print stylesheet.
-# Needs: python, Google Chrome. Run from the repo root: bash build-pdf.sh
+# Needs: python, Google Chrome. Run: bash scripts/build-pdf.sh
 set -e
+cd "$(dirname "$0")/.."
 CHROME="${CHROME:-/c/Program Files/Google/Chrome/Application/chrome.exe}"
 PORT=5199
 python -m http.server $PORT --bind 127.0.0.1 >/dev/null 2>&1 &

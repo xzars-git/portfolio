@@ -183,7 +183,7 @@
       <div><p class="kicker mono">${esc(t("hero.kicker"))}</p>
         <div class="name"><span class="plate plate-xl">ARSENIUS</span><span class="plate plate-xl plate-y">PURBANDONO</span></div>
         <p class="lead">${esc(t("hero.lead"))}</p><p class="where mono">${esc(t("hero.where"))}</p><p class="where mono">${esc(t("hero.facts"))}</p><div class="hero-badges"><span class="hbadge hb-y">${esc(t("hero.b1"))}</span><span class="hbadge">${esc(t("hero.b2"))}</span></div></div>
-      <div class="sl-photo"><img src="me.jpg" alt=""><i><b>${esc(t("phone.box"))}</b></i></div></div>`,
+      <div class="sl-photo"><img src="assets/img/me.jpg" alt=""><i><b>${esc(t("phone.box"))}</b></i></div></div>`,
     mobile: () => `<div class="sl sl-k sl-mob"><h2 class="h2 h2-y">${esc(t("mob.title"))}</h2><p class="sub">${esc(t("mob.sub"))}</p><div class="mob">
       ${[1, 2, 3, 4, 5, 6].map(i => `<div class="mob-card"><i class="mono">${esc(t(`mob.${i}k`))}</i><h3>${esc(t(`mob.${i}t`))}</h3><p>${esc(t(`mob.${i}d`))}</p></div>`).join("")}</div></div>`,
     stats: () => `<div class="sl"><h2 class="h2">${esc(t("stats.title"))}</h2><div class="stats">

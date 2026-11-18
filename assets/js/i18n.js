@@ -205,7 +205,7 @@ window.I18N = {
 // Apps on the "home screen". logo: real launcher icon (png) or placeholder (svg, ph:true).
 window.APPS = [
   {
-    id: "pp", shots: ["shots/pp-1.webp", "shots/pp-2.webp", "shots/pp-3.webp", "shots/pp-4.webp"], name: "Panah Pasopati", abbr: "PP", color: "#0E7A4F", ink: "#fff", status: "prod", logo: "logos/pp.png",
+    id: "pp", shots: ["assets/img/shots/pp-1.webp", "assets/img/shots/pp-2.webp", "assets/img/shots/pp-3.webp", "assets/img/shots/pp-4.webp"], name: "Panah Pasopati", abbr: "PP", color: "#0E7A4F", ink: "#fff", status: "prod", logo: "assets/img/logos/pp.png",
     stack: ["Flutter", "TFLite", "YOLO", "Shorebird", "Firebase", "Kotlin"],
     en: { what: "Officers point the camera at a plate and get the vehicle's tax record. Used in the field across West Java.",
       role: ["Built the plate-recognition module (Teman Pamor): detection, color, OCR, all on the phone", "Patched the Android camera plugin in Kotlin so the camera stops restarting 3–4 times", "Locked down OTA updates: HTTPS only, newer versions only, SHA-256 check", "Field rules: officers must be inside a location radius, a warning if the car was already traced, an owner-info form, and data scoped to each role's region", "Token refresh and forced logout when a session dies, plus a tracing report with a date filter", "Unit and widget tests for the plate OCR, role guard and update policy"] },
@@ -215,7 +215,7 @@ window.APPS = [
       role: ["プレート認識モジュール（Teman Pamor）を開発：検出・色・OCRをすべてスマホ上で", "AndroidカメラプラグインをKotlinで修正し、カメラが3〜4回再起動する問題を解消", "OTA更新を強化：HTTPSのみ、新しい版のみ、SHA-256で確認", "現場ルール：位置の半径チェック、照会済み車両の警告、所有者情報フォーム、ロールごとの地域でデータを制限", "トークン更新とセッション切れ時の強制ログアウト、日付で絞り込める照会レポート", "プレートOCR、ロールガード、更新ポリシーのユニット／ウィジェットテスト"] }
   },
   {
-    id: "atos", shots: ["shots/atos-1.webp", "shots/atos-2.webp", "shots/atos-3.webp", "shots/atos-4.webp"], name: "ATOS PAMOR", abbr: "AP", color: "#fff", ink: "#111", status: "prod", logo: "logos/atos.svg",
+    id: "atos", shots: ["assets/img/shots/atos-1.webp", "assets/img/shots/atos-2.webp", "assets/img/shots/atos-3.webp", "assets/img/shots/atos-4.webp"], name: "ATOS PAMOR", abbr: "AP", color: "#fff", ink: "#111", status: "prod", logo: "assets/img/logos/atos.svg",
     stack: ["Flutter", "MVC", "Dio", "Hive", "flutter_map", "Geolocator", "OTA"],
     en: { what: "A fuller tracing app for the special field team: data checks, vehicle history and the paperwork for collecting overdue tax.",
       role: ["Photo evidence gets a watermark with officer ID, GPS and the street address", "Every controller handles errors the same way now, and users see the real backend message", "Moved the app to a new major Flutter and Dart version", "Gallery photos lost GPS in the watermark (Android 10+ strips it). Shipped a fix that works as a Shorebird patch, and wrote down the full fix for the next APK", "Wrote the API integration and testing/debugging documents for ATOS PAMOR and Panah Pasopati"] },
@@ -225,7 +225,7 @@ window.APPS = [
       role: ["証拠写真に職員ID・GPS・住所の透かしを入れる", "全コントローラーのエラー処理をそろえ、バックエンドの実際のメッセージを表示", "Flutter／Dartの新しいメジャーバージョンへ移行", "ギャラリー写真の透かしから位置情報が消える問題（Android 10以降がGPSを削除）を、Shorebirdパッチで直せる形で修正し、次のAPK向けの完全な対策も文書化", "ATOS PAMORとPanah PasopatiのAPI連携資料とテスト・デバッグ資料を作成"] }
   },
   {
-    id: "sj", shots: ["shots/sj-1.webp", "shots/sj-2.webp"], name: "SAKTI JAWARA", abbr: "SJ", color: "#FDE2E3", ink: "#111", status: "prod", logo: "logos/sj.svg",
+    id: "sj", shots: ["assets/img/shots/sj-1.webp", "assets/img/shots/sj-2.webp"], name: "SAKTI JAWARA", abbr: "SJ", color: "#FDE2E3", ink: "#111", status: "prod", logo: "assets/img/logos/sj.svg",
     stack: ["Flutter", "Device SDK", "Thermal printer", "Excel/PDF"],
     en: { what: "The counter app at every Samsat office in West Java. It runs on cashier-style POS terminals, where officers take tax payments and change vehicle data.",
       role: ["Hooked up the device SDKs: camera, thermal printer, second screen", "Excel and PDF export", "Keyboard shortcuts, because counter staff hate reaching for the mouse"] },
@@ -235,7 +235,7 @@ window.APPS = [
       role: ["カメラ、サーマルプリンタ、セカンドスクリーンのSDKを連携", "ExcelとPDFの出力", "窓口の職員がマウスを使わずに済むキーボードショートカット"] }
   },
   {
-    id: "sm", shots: ["shots/sm-1.webp", "shots/sm-2.webp"], name: "Sakti Mobile", abbr: "SM", color: "#ECECEC", ink: "#111", status: "prod", logo: "logos/sm.svg",
+    id: "sm", shots: ["assets/img/shots/sm-1.webp", "assets/img/shots/sm-2.webp"], name: "Sakti Mobile", abbr: "SM", color: "#ECECEC", ink: "#111", status: "prod", logo: "assets/img/logos/sm.svg",
     stack: ["Flutter", "Camera", "Excel/PDF"],
     en: { what: "SAKTI JAWARA, on a phone. Verifiers use it to check payments and data changes.",
       role: ["Camera for evidence photos", "Local data storage", "Excel and PDF export"] },
@@ -245,7 +245,7 @@ window.APPS = [
       role: ["証拠写真のためのカメラ", "ローカルデータ保存", "ExcelとPDFの出力"] }
   },
   {
-    id: "sd", shots: ["shots/sd-1.webp", "shots/sd-2.webp"], name: "Samsat Digital", abbr: "SD", color: "#DCE8FD", ink: "#111", status: "prod", logo: "logos/sd.svg",
+    id: "sd", shots: ["assets/img/shots/sd-1.webp", "assets/img/shots/sd-2.webp"], name: "Samsat Digital", abbr: "SD", color: "#DCE8FD", ink: "#111", status: "prod", logo: "assets/img/logos/sd.svg",
     stack: ["Flutter", "Kiosk", "Device SDK"],
     en: { what: "SAKTI JAWARA on a big self-service kiosk at Samsat branches, where people pay vehicle tax on their own.",
       role: ["Connected the kiosk hardware: camera, printer and the rest", "Local data for each kiosk session"] },
@@ -255,7 +255,7 @@ window.APPS = [
       role: ["カメラやプリンタなどキオスク機器との連携", "利用ごとのローカルデータ管理"] }
   },
   {
-    id: "semar", shots: ["shots/semar-1.webp", "shots/semar-2.webp", "shots/semar-3.webp"], name: "SEMAR", abbr: "SE", color: "#fff", ink: "#111", status: "prod", logo: "logos/semar.png",
+    id: "semar", shots: ["assets/img/shots/semar-1.webp", "assets/img/shots/semar-2.webp", "assets/img/shots/semar-3.webp"], name: "SEMAR", abbr: "SE", color: "#fff", ink: "#111", status: "prod", logo: "assets/img/logos/semar.png",
     stack: ["Flutter", "Android + Web", "Multi-package", "Hive"],
     en: { what: "Water tax. Officers visit taxpayer companies and record their water-meter readings, then a verifier accepts or rejects each one.",
       role: ["Split into packages: recording, verification and the two histories", "One codebase for Android and the web. Detail pages load by the ID in the URL, so refreshing the browser doesn't break them", "Menus by role (recorder, verifier, admin). Other roles are turned away at login", "Second evidence photo and notes on each reading, an update check, Shorebird patches, a server switcher and a debug logger", "Tests for role checks and verification, plus a GitHub Actions pipeline that builds the Flutter web app and deploys it to Vercel"] },
@@ -265,7 +265,7 @@ window.APPS = [
       role: ["記録・検証・2つの履歴をパッケージに分割", "AndroidとWebを1つのコードで。詳細画面はURLのIDからデータを読み込むので、再読み込みしても壊れない", "ロール別メニュー（記録・検証・管理）。それ以外のロールはログイン時に拒否", "2枚目の証拠写真とメモ、更新チェック、Shorebirdパッチ、サーバー切替、デバッグロガー", "ロール確認と検証のテスト、Flutter WebをビルドしてVercelにデプロイするGitHub Actionsのパイプライン"] }
   },
   {
-    id: "pab", shots: ["shots/pab-1.webp", "shots/pab-2.webp", "shots/pab-3.webp"], name: "Pajak Alat Berat", abbr: "AB", color: "#fff", ink: "#111", status: "prod", logo: "logos/pab.svg",
+    id: "pab", shots: ["assets/img/shots/pab-1.webp", "assets/img/shots/pab-2.webp", "assets/img/shots/pab-3.webp"], name: "Pajak Alat Berat", abbr: "AB", color: "#fff", ink: "#111", status: "prod", logo: "assets/img/logos/pab.svg",
     stack: ["Flutter", "BLoC", "Provider"],
     en: { what: "Tax app for heavy equipment like excavators and cranes: recording and tracing.",
       role: ["Features and maintenance in a BLoC + Provider codebase"] },
@@ -276,7 +276,7 @@ window.APPS = [
   },
   /* hidden until it ships (still a prototype)
   {
-    id: "linmas", name: "Aing Linmas", abbr: "AL", color: "#7C3AED", ink: "#fff", status: "proto", logo: "logos/al.svg", ph: true,
+    id: "linmas", name: "Aing Linmas", abbr: "AL", color: "#7C3AED", ink: "#fff", status: "proto", logo: "assets/img/logos/al.svg", ph: true,
     stack: ["Flutter", "Android + iOS", "QR", "PDF"],
     en: { what: "Phone version of a sign-up system for Linmas community-protection members, from province down to village.",
       role: ["3-step sign-up with an ID-number check and drafts that save themselves", "Digital member card with a QR code, saves as image or PDF", "Admin side: recap dashboard by region, verify or reject with a reason, scan a card's QR to check it", "Runs on fake data for now, no backend yet"] },
@@ -312,19 +312,19 @@ window.SANDBOX = [
 
 // Life story, oldest first. tag: edu | work | cert | ai | now
 window.STORY = [
-  { hash: "0a1f3c2", logo: "logos/org/smkn1.png", tag: "edu", en: { when: "2016 – 2019", t: "SMKN 1 Simpang Empat", d: "Vocational high school, multimedia major." },
+  { hash: "0a1f3c2", logo: "assets/img/logos/org/smkn1.png", tag: "edu", en: { when: "2016 – 2019", t: "SMKN 1 Simpang Empat", d: "Vocational high school, multimedia major." },
     id: { when: "2016 – 2019", t: "SMKN 1 Simpang Empat", d: "SMK jurusan Multimedia." },
     ja: { when: "2016〜2019年", t: "SMKN 1 Simpang Empat", d: "職業高校のマルチメディア科。" } },
-  { hash: "3b7e9d0", logo: "logos/org/upi.svg", tag: "edu", en: { when: "2019 – 2023", t: "Universitas Pendidikan Indonesia", d: "Information Systems & Technology Education (PSTI), Bandung." },
+  { hash: "3b7e9d0", logo: "assets/img/logos/org/upi.svg", tag: "edu", en: { when: "2019 – 2023", t: "Universitas Pendidikan Indonesia", d: "Information Systems & Technology Education (PSTI), Bandung." },
     id: { when: "2019 – 2023", t: "Universitas Pendidikan Indonesia", d: "Kuliah Pendidikan Sistem dan Teknologi Informasi (PSTI) di Bandung." },
     ja: { when: "2019〜2023年", t: "インドネシア教育大学", d: "バンドンで情報システム・技術教育（PSTI）を専攻。" } },
-  { hash: "5c21a8e", logo: "logos/org/hima.png", tag: "edu", en: { when: "2021", t: "HIMA PSTI", d: "Chaired the legislative board of the department's student association." },
+  { hash: "5c21a8e", logo: "assets/img/logos/org/hima.png", tag: "edu", en: { when: "2021", t: "HIMA PSTI", d: "Chaired the legislative board of the department's student association." },
     id: { when: "2021", t: "HIMA PSTI", d: "Jadi ketua badan legislatif himpunan mahasiswa jurusan." },
     ja: { when: "2021年", t: "HIMA PSTI", d: "学科の学生会で立法委員会の委員長を務めた。" } },
-  { hash: "5a1e922", logo: "logos/org/safepedia.png", tag: "work", en: { when: "Aug – Dec 2022", t: "Mobile Developer Intern · PT Safepedia", d: "Native Android in Kotlin for an app used by PT Antam's mining operators. Bug fixes and new features." },
+  { hash: "5a1e922", logo: "assets/img/logos/org/safepedia.png", tag: "work", en: { when: "Aug – Dec 2022", t: "Mobile Developer Intern · PT Safepedia", d: "Native Android in Kotlin for an app used by PT Antam's mining operators. Bug fixes and new features." },
     id: { when: "Agu – Des 2022", t: "Intern Mobile Developer · PT Safepedia", d: "Android native pakai Kotlin buat aplikasi operator tambang PT Antam. Benerin bug, nambah fitur." },
     ja: { when: "2022年8月〜12月", t: "モバイル開発インターン・PT Safepedia", d: "PT Antamの鉱山オペレーター向けアプリをKotlinでネイティブAndroid開発。不具合修正と機能追加。" } },
-  { hash: "a76c0de", logo: "logos/org/bapenda.png", tag: "work", en: { when: "Feb 2023", t: "Mobile Application Developer · Bapenda Jabar", d: "Joined West Java's revenue agency as a mobile app developer, building the apps above. Still here." },
+  { hash: "a76c0de", logo: "assets/img/logos/org/bapenda.png", tag: "work", en: { when: "Feb 2023", t: "Mobile Application Developer · Bapenda Jabar", d: "Joined West Java's revenue agency as a mobile app developer, building the apps above. Still here." },
     id: { when: "Feb 2023", t: "Mobile Application Developer · Bapenda Jabar", d: "Masuk Bapenda Jawa Barat jadi mobile app developer, ngerjain aplikasi-aplikasi di atas. Sampe sekarang masih di sini." },
     ja: { when: "2023年2月", t: "モバイルアプリ開発者・西ジャワ州歳入庁", d: "モバイルアプリ開発者として入庁し、上のアプリを担当。現在も在籍。" } },
   { hash: "c9f1d04", tag: "hobby", en: { when: "Oct – Dec 2024", t: "Community Manager · Web3 Developer Indonesia", d: "Ran a developer community as a hobby, outside my day job." },
