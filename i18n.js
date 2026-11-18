@@ -51,7 +51,7 @@ window.I18N = {
     "about.en": "English: B2 (EF SET 54/100)",
     "about.ja": "Japanese: beginner. Working through Minna no Nihongo, aiming for JLPT N3",
     "about.id": "Indonesian: native",
-    "about.avail": "I want to work as a software or AI engineer in Japan. I can start in the second half of 2027 and will need visa sponsorship.",
+    "about.avail": "I want to work as a software or AI engineer in Japan and will need visa sponsorship. My goal is to speak Japanese comfortably by around December 2027. That's a target, not a promise.",
     "contact.title": "CONTACT",
     "contact.sub": "Email me. English is fine. 日本語はまだ勉強中です。",
     "foot.ip": "Bapenda Jabar work is shown with the agency's permission and belongs to Bapenda Jabar. No source code or internal data here.",
@@ -114,7 +114,7 @@ window.I18N = {
     "about.en": "Inggris: B2 (EF SET 54/100)",
     "about.ja": "Jepang: masih pemula, lagi ngulik Minna no Nihongo, target JLPT N3",
     "about.id": "Indonesia: bahasa ibu",
-    "about.avail": "Gue lagi nyari kerja software atau AI engineer di Jepang. Bisa mulai paruh kedua 2027, butuh sponsor visa.",
+    "about.avail": "Gue pengen kerja jadi software atau AI engineer di Jepang, butuh sponsor visa. Target gue, sekitar Desember 2027 bahasa Jepang gue udah cukup lancar. Itu masih target ya, bukan janji.",
     "contact.title": "KONTAK",
     "contact.sub": "Email aja. Mau pake Indo atau Inggris, gas.",
     "foot.ip": "Karya di Bapenda Jabar ditampilin dengan izin instansi dan tetap punya Bapenda Jabar. Gak ada source code atau data internal di sini.",
@@ -177,7 +177,7 @@ window.I18N = {
     "about.en": "英語：B2（EF SET 54/100）",
     "about.ja": "日本語：初学者。『みんなの日本語』で勉強中、JLPT N3が目標",
     "about.id": "インドネシア語：母語",
-    "about.avail": "日本でソフトウェア／AIエンジニアとして働きたいと考えています。2027年後半から働けます。就労ビザのサポートが必要です。",
+    "about.avail": "日本でソフトウェア／AIエンジニアとして働きたいと考えています。就労ビザのサポートが必要です。2027年12月ごろまでに日本語である程度話せるようになることを目標にしています（あくまで目標です）。",
     "contact.title": "連絡先",
     "contact.sub": "メールでご連絡ください。今のところ英語でお願いします。",
     "foot.ip": "西ジャワ州歳入庁での仕事は、同庁の許可を得て紹介しています。権利は同庁にあります。ソースコードや内部データは載せていません。",
@@ -318,7 +318,7 @@ window.STORY = [
   { hash: "c9f1d04", tag: "work", en: { when: "Oct – Dec 2024", t: "Community Manager · Web3 Developer Indonesia", d: "Ran the community side for a developer group, next to the day job." },
     id: { when: "Okt – Des 2024", t: "Community Manager · Web3 Developer Indonesia", d: "Ngurus komunitas developer, nyambi di luar kerjaan utama." },
     ja: { when: "2024年10月〜12月", t: "コミュニティマネージャー・Web3 Developer Indonesia", d: "本業と並行して開発者コミュニティを運営。" } },
-  { hash: "HEAD", tag: "now", en: { when: "now", t: "Learning Japanese, heading to Japan", d: "Working through Minna no Nihongo toward JLPT N3. Looking for a software or AI engineer role in Japan from the second half of 2027." },
-    id: { when: "sekarang", t: "Belajar Jepang, otw Jepang", d: "Lagi ngulik Minna no Nihongo, target JLPT N3. Nyari kerja software atau AI engineer di Jepang mulai paruh kedua 2027." },
-    ja: { when: "現在", t: "日本語を勉強中、日本へ", d: "『みんなの日本語』でJLPT N3を目指しています。2027年後半から日本でソフトウェア／AIエンジニアとして働きたいです。" } }
+  { hash: "HEAD", tag: "now", en: { when: "now", t: "Learning Japanese, heading to Japan", d: "Working through Minna no Nihongo toward JLPT N3. Goal: comfortable Japanese by around December 2027, then a software or AI engineer role in Japan." },
+    id: { when: "sekarang", t: "Belajar Jepang, otw Jepang", d: "Lagi ngulik Minna no Nihongo, target JLPT N3. Targetnya sekitar Desember 2027 bahasa Jepang gue udah cukup lancar, abis itu nyari kerja software atau AI engineer di Jepang." },
+    ja: { when: "現在", t: "日本語を勉強中、日本へ", d: "『みんなの日本語』でJLPT N3を目指しています。2027年12月ごろまでに日本語である程度話せるようになり、日本でソフトウェア／AIエンジニアとして働くのが目標です。" } }
 ];
