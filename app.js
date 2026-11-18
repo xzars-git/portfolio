@@ -98,6 +98,7 @@
     const shots = a.shots || [];
     $("#awShotsH").hidden = !shots.length;
     $("#awShots").innerHTML = shots.map((src, i) => `<a href="${src}" data-i="${i}"><img src="${src}" alt="${esc(a.name)} screenshot" loading="lazy"></a>`).join("");
+    $("#awShots").querySelectorAll("img").forEach(i => i.onload = () => i.parentNode.style.setProperty("--r", i.naturalWidth / i.naturalHeight));
     $("#awStack").innerHTML = a.stack.map(s => `<span class="chip">${esc(s)}</span>`).join("");
     win.hidden = false; $("#awClose").focus();
   });
