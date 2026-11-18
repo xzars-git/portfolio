@@ -504,3 +504,8 @@ html[lang=ja] .mob-card h3{font-weight:900}
 .lb-btn[hidden]{display:none}
 .lb-count{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);color:#fff;font-size:13px}
 @media (max-width:767px){.aw-shots img{height:220px}.lb-prev,.lb-next{top:auto;bottom:12px;transform:none}}
+.hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin:-14px 0 24px}
+.hbadge{font:700 15px var(--mono);padding:7px 12px;border:3px solid var(--ink);background:var(--card);color:var(--ink);box-shadow:4px 4px 0 var(--ink)}
+.hbadge.hb-y{background:var(--y);color:var(--k);transform:rotate(-1.5deg)}
+.sl .hero-badges{margin:6px 0 0;gap:16px}.sl .hbadge{font-size:24px;padding:10px 16px}
+@media print{.hbadge{box-shadow:none;transform:none!important}}
