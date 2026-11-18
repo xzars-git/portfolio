@@ -196,6 +196,8 @@
         <p class="sl-what">${esc(a[lang].what)}</p><h4 class="mono">${esc(t("apps.role"))}</h4>
         <ul>${a[lang].role.map(r => `<li>${esc(r)}</li>`).join("")}</ul>
         <div class="chips">${a.stack.map(s => `<span class="chip">${esc(s)}</span>`).join("")}</div></div></div>`,
+    shots: a => `<div class="sl sl-shots"><p class="mono sl-tag">${esc(t("apps.shots"))}</p><h2 class="h2">${esc(a.name)}</h2>
+      <div class="sl-shots-row">${a.shots.map(s => `<img src="${s}" alt="${esc(a.name)} screenshot">`).join("")}</div></div>`,
     story: () => `<div class="sl sl-y"><h2 class="h2">${esc(t("lab.story.t"))}</h2><div class="sl-story">
       <div class="vs"><div class="vs-a"><small>Google ML Kit</small><b>56%</b><div class="bar"><i style="width:56%"></i></div></div>
         <div class="vs-b"><small>CNN+CTC</small><b>76%</b><div class="bar"><i style="width:76%"></i></div></div></div>
@@ -212,7 +214,7 @@
   };
 
   function buildSlides() {
-    slides = [S.title(), ...APPS.map(S.app), S.log([...STORY].reverse()), S.mobile(), S.stats(), S.pipe(), S.story(), S.models(), S.sandbox(), S.end()];
+    slides = [S.title(), ...APPS.flatMap(a => a.shots?.length ? [S.app(a), S.shots(a)] : [S.app(a)]), S.log([...STORY].reverse()), S.mobile(), S.stats(), S.pipe(), S.story(), S.models(), S.sandbox(), S.end()];
     stage.innerHTML = slides.map((h, i) => `<section class="slide" data-n="${i}" aria-hidden="true">${h}</section>`).join("");
     $("#deckHint").textContent = t("sl.hint");
     go(Math.min(cur, slides.length - 1));
@@ -222,8 +224,9 @@
     stage.querySelectorAll(".slide").forEach((s, i) => { s.classList.toggle("on", i === cur); s.setAttribute("aria-hidden", i !== cur); });
     // too much text for 1600×900? shrink the whole slide instead of cutting it off
     const sl = stage.querySelector(".slide.on > .sl");
+    sl.style.cssText = "height:auto";
+    const z = sl.classList.contains("sl-shots") ? 1 : Math.min(900 / sl.scrollHeight, 1600 / sl.scrollWidth);
     sl.style.cssText = "";
-    const z = Math.min(900 / sl.scrollHeight, 1600 / sl.scrollWidth);
     if (z < 1) sl.style.cssText = `zoom:${z};width:${1600 / z}px;height:${900 / z}px`;
     $("#deckCount").textContent = `${cur + 1} / ${slides.length}`;
     $("#deckProg").style.width = ((cur + 1) / slides.length * 100) + "%";
