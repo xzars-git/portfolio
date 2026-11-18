@@ -551,3 +551,4 @@ html[lang=ja] .mob-card h3{font-weight:900}
 /* dark mode: warm charcoal cards on the yellow block (lab + sandbox) */
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]) .block-y :is(.story,.model,.sand){background:#2A2216;color:#F4EBD6}:root:not([data-theme=light]) .block-y .model .metric{background:var(--y);color:#2A2216}:root:not([data-theme=light]) .block-y .sand .metric{color:var(--y)}}
 :root[data-theme=dark] .block-y :is(.story,.model,.sand){background:#2A2216;color:#F4EBD6}:root[data-theme=dark] .block-y .model .metric{background:var(--y);color:#2A2216}:root[data-theme=dark] .block-y .sand .metric{color:var(--y)}
+#about .commit:first-child .c-tag{background:var(--k);color:var(--lime)}
