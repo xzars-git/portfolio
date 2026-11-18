@@ -154,7 +154,7 @@
     if (!e.isIntersecting) return;
     e.target.classList.add("flash"); setTimeout(() => e.target.classList.remove("flash"), 1600); io.unobserve(e.target);
   }), { threshold: .6 });
-  document.querySelectorAll(".det").forEach(el => io.observe(el));
+  if (matchMedia("(hover: none)").matches) document.querySelectorAll(".det").forEach(el => io.observe(el));
 
   // bottom-nav active section
   const links = [...document.querySelectorAll(".bottomnav a")];
