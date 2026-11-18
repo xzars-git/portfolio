@@ -7,7 +7,7 @@ window.I18N = {
     "hero.kicker": "FLUTTER MOBILE DEV · AI THAT RUNS ON THE PHONE",
     "hero.lead": "I build apps for tax officers in West Java. Lately I've been teaching those apps to read license plates on the phone itself, no internet needed.",
     "hero.where": "Bandung, Indonesia · West Java Revenue Agency (Bapenda Jabar) · since Feb 2023",
-    "hero.facts": "Mobile developer (front end) · B.Ed. (S.Pd.), Information Systems & Technology Education, UPI 2023 · Available Q1 2028, needs visa sponsorship",
+    "hero.facts": "Mobile developer (front end) · B.Ed. (S.Pd.), Information Systems & Technology Education, UPI 2023 · Ready to work in Japan from Q1 2028 (visa sponsorship needed)",
     "hero.cta1": "See the apps", "hero.cta2": "Download PDF", "hero.cta3": "▶ Play as slides",
     "phone.scan": "SCANNING", "phone.read": "RESULT", "phone.ok": "NEEDS A SECOND LOOK", "phone.color": "class: human",
     "phone.box": "flutter dev? 0.51", "phone.res": ["flutter dev?", "flutter dev.. maybe", "flutter dev ?"],
@@ -71,7 +71,7 @@ window.I18N = {
     "hero.kicker": "FLUTTER MOBILE DEV · AI-NYA JALAN DI HP",
     "hero.lead": "Gue bikin aplikasi buat petugas pajak di Jabar. Belakangan gue ngajarin aplikasinya baca plat nomor langsung di HP, gak perlu internet.",
     "hero.where": "Bandung · Bapenda Jabar · dari Feb 2023",
-    "hero.facts": "Mobile developer (front end) · S.Pd. Pendidikan Sistem & Teknologi Informasi, UPI 2023 · Bisa mulai Q1 2028, butuh sponsor visa",
+    "hero.facts": "Mobile developer (front end) · S.Pd. Pendidikan Sistem & Teknologi Informasi, UPI 2023 · Siap kerja di Jepang mulai Q1 2028 (butuh sponsor visa)",
     "hero.cta1": "Lihat aplikasinya", "hero.cta2": "Download PDF", "hero.cta3": "▶ Puter jadi slide",
     "phone.scan": "SCAN MUKA", "phone.read": "HASIL", "phone.ok": "PERLU DICEK ULANG", "phone.color": "kelas: manusia",
     "phone.box": "orang_ganteng 0.51", "phone.res": ["orang ganteng?", "orang ganteng.. kali", "orang ganteng ?"],
@@ -135,7 +135,7 @@ window.I18N = {
     "hero.kicker": "Flutterモバイル開発 · スマホで動くAI",
     "hero.lead": "西ジャワ州の税務職員が使うアプリを開発しています。最近は、そのアプリがスマホだけでナンバープレートを読めるようにしました。通信は不要です。",
     "hero.where": "インドネシア・バンドン｜西ジャワ州歳入庁｜2023年2月〜",
-    "hero.facts": "モバイル開発（フロントエンド）｜インドネシア教育大学 情報システム・技術教育 学士（S.Pd.）2023年卒｜2028年1〜3月から勤務可能・就労ビザ要",
+    "hero.facts": "モバイル開発（フロントエンド）｜インドネシア教育大学 情報システム・技術教育 学士（S.Pd.）2023年卒｜2028年1〜3月から日本で勤務可能（就労ビザ要）",
     "hero.cta1": "アプリを見る", "hero.cta2": "PDFをダウンロード", "hero.cta3": "▶ スライドで見る",
     "phone.scan": "スキャン中", "phone.read": "結果", "phone.ok": "要再確認", "phone.color": "クラス：人間",
     "phone.box": "Flutter開発者? 0.51", "phone.res": ["Flutter開発者？", "Flutter開発者…かも", "Flutter開発者 ？"],
@@ -321,7 +321,7 @@ window.STORY = [
   { hash: "c9f1d04", tag: "work", en: { when: "Oct – Dec 2024", t: "Community Manager · Web3 Developer Indonesia", d: "Ran the community side for a developer group, next to the day job." },
     id: { when: "Okt – Des 2024", t: "Community Manager · Web3 Developer Indonesia", d: "Ngurus komunitas developer, nyambi di luar kerjaan utama." },
     ja: { when: "2024年10月〜12月", t: "コミュニティマネージャー・Web3 Developer Indonesia", d: "本業と並行して開発者コミュニティを運営。" } },
-  { hash: "HEAD", tag: "now", en: { when: "now", t: "Learning Japanese, heading to Japan", d: "Working through Minna no Nihongo. JFT-Basic in Mar–Apr 2027, JLPT N3 in Jul 2027 (Dec 2027 as backup). Aiming to start in Japan from Q1 2028." },
-    id: { when: "sekarang", t: "Belajar Jepang, otw Jepang", d: "Lagi ngulik Minna no Nihongo. JFT-Basic Mar–Apr 2027, JLPT N3 Juli 2027 (cadangan Des 2027). Target mulai kerja di Jepang Q1 2028." },
-    ja: { when: "現在", t: "日本語を勉強中、日本へ", d: "『みんなの日本語』で勉強中。2027年3〜4月にJFT-Basic、7月にJLPT N3（予備：12月）。2028年1〜3月から日本で働くことを目指しています。" } }
+  { hash: "HEAD", tag: "now", en: { when: "now", t: "Learning Japanese, heading to Japan", d: "Working through Minna no Nihongo toward JLPT N3." },
+    id: { when: "sekarang", t: "Belajar Jepang, otw Jepang", d: "Lagi ngulik Minna no Nihongo, target JLPT N3." },
+    ja: { when: "現在", t: "日本語を勉強中、日本へ", d: "『みんなの日本語』でJLPT N3を目指して勉強中。" } }
 ];
