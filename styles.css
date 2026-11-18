@@ -444,7 +444,7 @@ html[lang=ja] .mob-card h3{font-weight:900}
 #about .commit{border:3px solid var(--ink);background:var(--card);padding:12px 14px;margin:0;box-shadow:4px 4px 0 var(--ink)}
 #about .commit::before{display:none}
 #about .commit:nth-child(3n+2){transform:rotate(.6deg)}#about .commit:nth-child(3n){transform:rotate(-.5deg)}
-#about .commit:last-child{background:var(--lime);color:var(--k)}
+#about .commit:first-child{background:var(--lime);color:var(--k)}
 #about .c-head{font-size:13.5px;line-height:1.35}
 #about .c-head .hash{display:none}
 #about .c-logo{float:right;margin:0 0 6px 8px}
