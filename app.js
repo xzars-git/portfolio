@@ -15,8 +15,19 @@
   const stamp = s => `<span class="stamp ${s}">${esc(t("status." + s))}</span>`;
   const MAIL = ["xzars009", "gmail.com"].join("@");
   const commit = c => `<div class="commit"><div class="c-head">${c.logo ? `<span class="c-logo"><img src="${c.logo}" alt=""></span>` : c.ini ? `<span class="c-logo c-ini">${esc(c.ini)}</span>` : ""}<span class="hash">${esc(c.hash)}</span> <b>${esc(c[lang].t)}</b>${c.tag === "now" ? ' <span class="c-tag">HEAD</span>' : ""}</div>
-    <div class="c-meta">${esc(c[lang].when)} <span class="c-kind">(${esc(c.tag)})</span></div><p>${esc(c[lang].d)}</p></div>`;
+    <div class="c-meta">${esc(c[lang].when)} <span class="c-kind">(${esc(t("tag." + c.tag))})</span></div><p>${esc(c[lang].d)}</p></div>`;
   const icon = (a, cls = "sq") => `<span class="${cls}" style="background:${a.color};color:${a.ink}"><img src="${a.logo}" alt="" loading="lazy"></span>`;
+
+  // share: native sheet on phones, copy to clipboard on desktop
+  $("#shareBtn").addEventListener("click", async () => {
+    const url = location.origin + location.pathname + "?lang=" + lang;
+    try {
+      if (navigator.share && matchMedia("(hover: none)").matches) return await navigator.share({ title: document.title, url });
+      await navigator.clipboard.writeText(url);
+      const s = $("#shareBtn span"); s.textContent = t("share.ok"); $("#shareBtn").classList.add("ok");
+      setTimeout(() => { s.textContent = t("share"); $("#shareBtn").classList.remove("ok"); }, 1800);
+    } catch (e) { if (e.name !== "AbortError") prompt(t("share"), url); }
+  });
 
   function render() {
     document.documentElement.lang = lang;
@@ -25,7 +36,7 @@
     document.querySelectorAll("[data-lang]").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang));
     ["pdfTop", "pdfHero", "pdfFoot"].forEach(id => { $("#" + id).href = pdfName(lang); });
 
-    $("#storyLog").innerHTML = STORY.map(commit).join("");
+    $("#storyLog").innerHTML = [...STORY].reverse().map(commit).join("");
     document.querySelectorAll(".mail-addr").forEach(el => { el.textContent = MAIL; });
     tick();
 
@@ -201,7 +212,7 @@
   };
 
   function buildSlides() {
-    slides = [S.title(), ...APPS.map(S.app), S.log(STORY), S.mobile(), S.stats(), S.pipe(), S.story(), S.models(), S.sandbox(), S.end()];
+    slides = [S.title(), ...APPS.map(S.app), S.log([...STORY].reverse()), S.mobile(), S.stats(), S.pipe(), S.story(), S.models(), S.sandbox(), S.end()];
     stage.innerHTML = slides.map((h, i) => `<section class="slide" data-n="${i}" aria-hidden="true">${h}</section>`).join("");
     $("#deckHint").textContent = t("sl.hint");
     go(Math.min(cur, slides.length - 1));
