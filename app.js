@@ -97,10 +97,27 @@
     $("#awRole").innerHTML = a[lang].role.map(r => `<li>${esc(r)}</li>`).join("");
     const shots = a.shots || [];
     $("#awShotsH").hidden = !shots.length;
-    $("#awShots").innerHTML = shots.map(src => `<a href="${src}" target="_blank" rel="noopener"><img src="${src}" alt="${esc(a.name)} screenshot" loading="lazy"></a>`).join("");
+    $("#awShots").innerHTML = shots.map((src, i) => `<a href="${src}" data-i="${i}"><img src="${src}" alt="${esc(a.name)} screenshot" loading="lazy"></a>`).join("");
     $("#awStack").innerHTML = a.stack.map(s => `<span class="chip">${esc(s)}</span>`).join("");
     win.hidden = false; $("#awClose").focus();
   });
+  // in-page screenshot viewer
+  const lb = $("#lightbox");
+  let lbList = [], lbAt = 0;
+  const lbShow = i => { lbAt = (i + lbList.length) % lbList.length; $("#lbImg").src = lbList[lbAt]; $("#lbCount").textContent = `${lbAt + 1} / ${lbList.length}`;
+    $("#lbPrev").hidden = $("#lbNext").hidden = lbList.length < 2; };
+  $("#awShots").addEventListener("click", e => {
+    const l = e.target.closest("a"); if (!l) return;
+    e.preventDefault();
+    lbList = [...$("#awShots").querySelectorAll("a")].map(x => x.getAttribute("href"));
+    lbShow(+l.dataset.i); lb.showModal();
+  });
+  $("#lbPrev").addEventListener("click", () => lbShow(lbAt - 1));
+  $("#lbNext").addEventListener("click", () => lbShow(lbAt + 1));
+  $("#lbClose").addEventListener("click", () => lb.close());
+  lb.addEventListener("click", e => { if (e.target === lb) lb.close(); });
+  lb.addEventListener("keydown", e => { if (e.key === "ArrowLeft") lbShow(lbAt - 1); if (e.key === "ArrowRight") lbShow(lbAt + 1); });
+  lb.addEventListener("cancel", e => e.stopPropagation());
   const closeWin = () => { win.hidden = true; lastIcon && lastIcon.focus(); };
   $("#awClose").addEventListener("click", closeWin);
   win.addEventListener("click", e => { if (e.target === win) closeWin(); });
@@ -227,7 +244,7 @@
       else if (e.key === "End") go(slides.length - 1);
       else if (e.key === "f" || e.key === "F") fullscreen();
       else if (e.key === "Escape" && !document.fullscreenElement) closeDeck();
-    } else if (e.key === "Escape" && !win.hidden) closeWin();
+    } else if (e.key === "Escape" && !win.hidden && !lb.open) closeWin();
   });
 
   render();

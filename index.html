@@ -220,6 +220,15 @@
   <p>© 2026 Arsenius Purbandono</p>
 </footer>
 
+<!-- screenshot viewer -->
+<dialog class="lightbox" id="lightbox" aria-label="Screenshot">
+  <img id="lbImg" alt="">
+  <button class="lb-btn lb-prev mono" id="lbPrev" aria-label="Previous">‹</button>
+  <button class="lb-btn lb-next mono" id="lbNext" aria-label="Next">›</button>
+  <button class="lb-btn lb-close mono" id="lbClose" aria-label="Close">✕</button>
+  <span class="lb-count mono" id="lbCount"></span>
+</dialog>
+
 <!-- app "window" -->
 <div class="appwin" id="appwin" hidden>
   <div class="appwin-screen" role="dialog" aria-modal="true" aria-labelledby="awTitle">
