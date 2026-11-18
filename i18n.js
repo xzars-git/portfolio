@@ -206,7 +206,7 @@ window.APPS = [
       role: ["プレート認識モジュール（Teman Pamor）を開発：検出・色・OCRをすべてスマホ上で", "AndroidカメラプラグインをKotlinで修正し、カメラが3〜4回再起動する問題を解消", "OTA更新を強化：HTTPSのみ、新しい版のみ、SHA-256で確認", "現場ルール：位置の半径チェック、照会済み車両の警告、所有者情報フォーム、ロールごとの地域でデータを制限", "トークン更新とセッション切れ時の強制ログアウト、日付で絞り込める照会レポート", "プレートOCR、ロールガード、更新ポリシーのユニット／ウィジェットテスト"] }
   },
   {
-    id: "atos", shots: ["shots/atos-1.webp"], name: "ATOS PAMOR", abbr: "AP", color: "#fff", ink: "#111", status: "prod", logo: "logos/atos.svg",
+    id: "atos", shots: ["shots/atos-1.webp", "shots/atos-2.webp", "shots/atos-3.webp", "shots/atos-4.webp"], name: "ATOS PAMOR", abbr: "AP", color: "#fff", ink: "#111", status: "prod", logo: "logos/atos.svg",
     stack: ["Flutter", "MVC", "Dio", "Hive", "flutter_map", "Geolocator", "OTA"],
     en: { what: "A fuller tracing app for the special field team: data checks, vehicle history and the paperwork for collecting overdue tax.",
       role: ["Photo evidence gets a watermark with officer ID, GPS and the street address", "Every controller handles errors the same way now, and users see the real backend message", "Moved the app to a new major Flutter and Dart version", "Gallery photos lost GPS in the watermark (Android 10+ strips it). Shipped a fix that works as a Shorebird patch, and wrote down the full fix for the next APK", "Wrote the API integration and testing/debugging documents for ATOS PAMOR and Panah Pasopati"] },
