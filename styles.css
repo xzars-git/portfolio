@@ -548,3 +548,6 @@ html[lang=ja] .mob-card h3{font-weight:900}
 }
 /* cards on the yellow block use the theme's text colour, not the block's dark text */
 .block-y .story,.block-y .model{color:var(--ink)}
+/* dark mode: lab cards match the sandbox cards (black on yellow) */
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .block-y :is(.story,.model){background:var(--k)}}
+:root[data-theme=dark] .block-y :is(.story,.model){background:var(--k)}
